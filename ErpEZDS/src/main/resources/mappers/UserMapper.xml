@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezds.erp.mapper.UserMapper">
+  		
+    <!-- 인터셉터 후 세션에 등록 -->
+    <select id="getUser" parameterType="UserVO" resultType="UserVO">
+        select *  from prd_user
+        where user_email = #{userEmail} and user_pw= #{userPw}
+    </select>
+    
+    <!-- 인터셉터 후 세션에 등록 -->
+    <select id="getUserId" parameterType="String" resultType="UserVO">
+        select *  from prd_user
+        where user_email = #{username} 
+    </select>
+ 	
+    <select id="insertUser" parameterType="UserVO">
+    INSERT INTO prd_user(user_email, user_pw, user_name, user_role)
+    VALUES      ( #{userEmail}, #{userPw}, #{userName}, 'ROLE_USER')
+    </select>
+ 
+ 
+
+</mapper>

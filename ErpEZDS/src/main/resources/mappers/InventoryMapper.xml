@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezds.erp.mapper.InventoryMapper">
+  		
+    
+    <select id="getIvtList" parameterType="InventoryVO" resultType="InventoryVO">
+       SELECT C.prd_no , C.prd_desc, A.icm_sum_qty , B.out_sum_qty , (A.icm_sum_qty - B.out_sum_qty) as ivtTotal , C.prd_qty , FLOOR((A.icm_sum_qty - B.out_sum_qty) / C.prd_qty) as avlPrdQty
+     FROM 
+         (   SELECT prd_id as A , sum(icm_qty)  as icm_sum_qty 	FROM prd_incoming_manage group by prd_id ) A
+     JOIN          
+           (   SELECT 	prd_id as B, sum(out_qty) as out_sum_qty FROM prd_outgoing_manage group by prd_id ) B  
+       ON		A.A =B.B 
+     JOIN 		prd_product_manage C 
+       ON 		C.prd_id = A.A;
+    </select>
+    
+ 
+
+</mapper>

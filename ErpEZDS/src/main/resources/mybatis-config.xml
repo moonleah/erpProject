@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+        <setting name="callSettersOnNulls" value="true"/>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+    
+     <typeAliases>
+   			<typeAlias type="com.ezds.erp.vo.ErpVO" alias="ErpVO"/>
+   			<typeAlias type="com.ezds.erp.vo.CompanyVO" alias="CompanyVO"/>
+   			<typeAlias type="com.ezds.erp.vo.UserVO" alias="UserVO"/>
+   			<typeAlias type="com.ezds.erp.vo.ProductVO" alias="ProductVO"/>
+   			<typeAlias type="com.ezds.erp.vo.IncomVO" alias="IncomVO"/>
+   			<typeAlias type="com.ezds.erp.vo.InventoryVO" alias="InventoryVO"/>
+	</typeAliases>
+	
+</configuration>
+

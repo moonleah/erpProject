@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezds.erp.mapper.IncomMapper">
+  		
+   
+    <select id="getIncomList" parameterType="IncomVO" resultType="IncomVO">
+			SELECT 		A.icm_id, A.prd_id , B.prd_no , B.prd_desc , A.icm_qty , DATE_FORMAT(A.icm_order_date , '%Y-%m-%d') as icm_order_date ,
+			       		A.icm_price, A.icm_comment ,DATE_FORMAT(A.icm_date ,   '%Y-%m-%d') as icm_date , A.icm_company_name
+			FROM   		prd_incoming_manage A 
+			LEFT JOIN 	prd_product_manage B 
+			ON 			A.prd_id = B.prd_id 
+            ORDER BY    A.icm_date DESC;
+    </select>
+ 
+  
+
+</mapper>

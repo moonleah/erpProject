@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezds.erp.mapper.ErpMapper">
+  		
+    <select id="selectCompany" resultType="String">
+  	SELECT company_name FROM ezds_erp.prd_company
+	where company_id = 1
+	</select>
+	
+	<select id="selectAll" resultType="CompanyVO">
+  	SELECT * FROM ezds_erp.prd_company order by company_id asc
+	</select>
+  
+
+</mapper>
