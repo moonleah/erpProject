@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ezds.erp.service.ErpService;
+import com.ezds.erp.service.CompanyService;
 import com.ezds.erp.service.UserService;
 import com.ezds.erp.vo.UserVO;
 

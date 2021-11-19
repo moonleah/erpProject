@@ -22,7 +22,7 @@
                                         <tr>
                                         	<!-- <th>No</th> -->
                                         	<th>PART Number</th>
-  											<th>PART DESC</th>
+  											<th>PART SPEC'</th>
                                             <th>입고수량(Total)</th>
                                             <th>가격</th>
                                             <th>발주날짜</th>
@@ -37,7 +37,7 @@
 									         <tr onclick = "IncomDetail(${result.icmId},${result.prdNo})">
 									          <%--  <th  >${result.icmId}</th> --%>
 									           <th  >${result.prdNo}</th>
-									           <th  >${result.prdDesc}</th>
+									           <th  >${result.prdSpec}</th>
 									           <th  >${result.icmQty}</th>
 									           <th  >${result.icmPrice}</th>
 									           <th  >${result.icmOrderDate}</th>

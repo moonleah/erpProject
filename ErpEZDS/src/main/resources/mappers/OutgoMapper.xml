@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezds.erp.mapper.OutgoMapper">
+  		
+   
+    <select id="getOutgoList" parameterType="OutgoVO" resultType="OutgoVO">
+			SELECT 		A.out_id, A.prd_id , B.prd_no , B.prd_spec , A.out_qty ,
+			       		A.out_price, A.out_comment ,DATE_FORMAT(A.out_date ,   '%Y-%m-%d') as out_date , A.out_company_name
+			FROM   		prd_outgoing_manage A 
+			LEFT JOIN 	prd_product_manage B 
+			ON 			A.prd_id = B.prd_id 
+            ORDER BY    A.out_date DESC
+    </select>
+    
+    <select id="getoutDetailList" parameterType="Integer" resultType="OutgoVO">
+			SELECT 		A.out_id, A.prd_id , B.prd_no , B.prd_spec , A.out_qty ,
+			       		A.out_price, A.out_comment ,DATE_FORMAT(A.out_date ,   '%Y-%m-%d') as out_date , A.out_company_name
+			FROM   		prd_outgoing_manage A 
+			LEFT JOIN 	prd_product_manage B 
+			ON 			A.prd_id = B.prd_id 
+            WHERE 		B.prd_no = #{prdNo}
+            ORDER BY    A.out_date DESC
+    </select>
+ 
+  
+
+</mapper>

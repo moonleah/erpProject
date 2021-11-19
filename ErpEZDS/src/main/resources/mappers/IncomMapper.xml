@@ -6,7 +6,7 @@
   		
    
     <select id="getIncomList" parameterType="IncomVO" resultType="IncomVO">
-			SELECT 		A.icm_id, A.prd_id , B.prd_no , B.prd_desc , A.icm_qty , DATE_FORMAT(A.icm_order_date , '%Y-%m-%d') as icm_order_date ,
+			SELECT 		A.icm_id, A.prd_id , B.prd_no , B.prd_spec , A.icm_qty , DATE_FORMAT(A.icm_order_date , '%Y-%m-%d') as icm_order_date ,
 			       		A.icm_price, A.icm_comment ,DATE_FORMAT(A.icm_date ,   '%Y-%m-%d') as icm_date , A.icm_company_name
 			FROM   		prd_incoming_manage A 
 			LEFT JOIN 	prd_product_manage B 
@@ -15,7 +15,7 @@
     </select>
     
     <select id="getIcmDetailList" parameterType="Integer" resultType="IncomVO">
-			SELECT 		A.icm_id, A.prd_id , B.prd_no , B.prd_desc , A.icm_qty , DATE_FORMAT(A.icm_order_date , '%Y-%m-%d') as icm_order_date ,
+			SELECT 		A.icm_id, A.prd_id , B.prd_no , B.prd_spec , A.icm_qty , DATE_FORMAT(A.icm_order_date , '%Y-%m-%d') as icm_order_date ,
 			       		A.icm_price, A.icm_comment ,DATE_FORMAT(A.icm_date ,   '%Y-%m-%d') as icm_date , A.icm_company_name
 			FROM   		prd_incoming_manage A 
 			LEFT JOIN 	prd_product_manage B 

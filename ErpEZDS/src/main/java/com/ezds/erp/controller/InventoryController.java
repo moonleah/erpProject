@@ -17,6 +17,7 @@ import com.ezds.erp.service.OutgoService;
 import com.ezds.erp.service.ProductService;
 import com.ezds.erp.vo.IncomVO;
 import com.ezds.erp.vo.InventoryVO;
+import com.ezds.erp.vo.OutgoVO;
 import com.ezds.erp.vo.ProductVO;
 
 @Controller
@@ -51,12 +52,12 @@ public class InventoryController { //Z5 생산 부품 입출고
 	public String ivtDetail(@ModelAttribute InventoryVO inventoryVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		Integer prdNo = inventoryVO.getPrdNo();
-		System.out.println( "prdNO :" + prdNo);
 		ProductVO prdInfo = prdService.getPrdDetail(prdNo);
 		List<IncomVO> getIcmDetailList = icmService.getIcmDetailList(prdNo);
+		//List<OutgoVO> getOutDetailList = outService.getIcmDetailList(prdNo);
 		model.addAttribute("prdInfo",  prdInfo);
 		model.addAttribute("getIncomList",  getIcmDetailList);
-		model.addAttribute("prdInfo",  prdInfo);
+	//	model.addAttribute("getOutgoList",  getOutDetailList);
 		
 		return  "/inventory/ivt_modal";
 	}

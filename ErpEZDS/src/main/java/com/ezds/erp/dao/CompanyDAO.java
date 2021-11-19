@@ -6,14 +6,14 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.ezds.erp.mapper.ErpMapper;
+import com.ezds.erp.mapper.CompanyMapper;
 import com.ezds.erp.vo.CompanyVO;
 
 @Component
-public class ErpDAO {
+public class CompanyDAO {
 	
 	@Autowired
-	private ErpMapper mapper;
+	private CompanyMapper mapper;
 	
 
 	

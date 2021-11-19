@@ -21,7 +21,7 @@ public class IncomVO {
 	
 	
 	private String prdNo; //부품제품번호
-	private String prdDesc; //부품 description
+	private String prdSpec; //부품 spec
 	
 	public Integer getIcmId() {
 		return icmId;
@@ -84,11 +84,11 @@ public class IncomVO {
 	public void setPrdNo(String prdNo) {
 		this.prdNo = prdNo;
 	}
-	public String getPrdDesc() {
-		return prdDesc;
+	public String getPrdSpec() {
+		return prdSpec;
 	}
-	public void setPrdDesc(String prdDesc) {
-		this.prdDesc = prdDesc;
+	public void setPrdSpec(String prdSpec) {
+		this.prdSpec = prdSpec;
 	}
 	public String getSumQty() {
 		return sumQty;
