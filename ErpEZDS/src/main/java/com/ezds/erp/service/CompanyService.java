@@ -6,6 +6,6 @@ import com.ezds.erp.vo.CompanyVO;
 
 public interface CompanyService {
 	public String selectCompany() throws Exception;
-
 	public List<CompanyVO>selectList() throws Exception;
+	public void compnayInsert(CompanyVO companyVO) throws Exception;
 }

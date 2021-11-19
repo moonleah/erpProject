@@ -6,12 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSession;
 
 import com.ezds.erp.vo.IncomVO;
+import com.ezds.erp.vo.OutgoVO;
 import com.ezds.erp.vo.UserVO;
 
 
 @Mapper
 public interface OutgoMapper {
-
-	List<IncomVO> getIncomList(IncomVO icomVO) throws Exception;
-	
+	List<OutgoVO> getOutgoList()  throws Exception;
 }

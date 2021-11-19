@@ -22,8 +22,12 @@ public class CompanyServiceImpl implements CompanyService{
 
 	@Override
 	public List<CompanyVO>selectList() throws Exception {
-		// TODO Auto-generated method stub
 		return companyDao.SelectAll();
+	}
+
+	@Override
+	public void compnayInsert(CompanyVO companyVO) throws Exception {
+		companyDao.compnayInsert(companyVO);		
 	}
 	
 	

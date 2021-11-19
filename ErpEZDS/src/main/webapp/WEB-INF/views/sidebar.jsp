@@ -82,7 +82,7 @@
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="/user/getIncomTotalList">
+                <a class="nav-link" href="/user/out">
                     <i class="fas fa-fw fa-table"></i>
                     <span>prd Part release</span></a>
             </li>

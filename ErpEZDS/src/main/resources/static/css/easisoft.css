@@ -107,7 +107,7 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 .es_radio > label:last-child{margin-right:0px;}
 .es_radio > label > input {display:none}
 .es_radio > label > input + span {display:inline-block;padding:6px;border:1px solid #999;border-radius:3px;background:#fff;cursor:pointer;}
-.es_radio > label > input:checked + span {background:#000;color:#fff;border:0}
+.es_radio > label > input:checked + span {background:#4876EF;color:#fff;border:0}
 .es_radio.disabled {cursor:not-allowed;opacity:.5}
 .es_radio.disabled > label {pointer-events:none;}
 

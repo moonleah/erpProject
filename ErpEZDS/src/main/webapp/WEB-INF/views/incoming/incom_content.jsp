@@ -5,10 +5,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Z5 Receiving List</h1>
-                     <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Z5 PART RECEIPT</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -20,10 +17,10 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        	<!-- <th>No</th> -->
-                                        	<th>PART Number</th>
+                                        	<th>No</th>
+                                        	<th>PART NO</th>
   											<th>PART SPEC'</th>
-                                            <th>입고수량(Total)</th>
+                                            <th>입고수량</th>
                                             <th>가격</th>
                                             <th>발주날짜</th>
                                             <th>입고날짜</th>
@@ -35,7 +32,7 @@
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${getIncomList}" varStatus="status">
 									         <tr onclick = "IncomDetail(${result.icmId},${result.prdNo})">
-									          <%--  <th  >${result.icmId}</th> --%>
+									           <th >${status.count}</th>
 									           <th  >${result.prdNo}</th>
 									           <th  >${result.prdSpec}</th>
 									           <th  >${result.icmQty}</th>

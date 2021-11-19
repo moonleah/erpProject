@@ -5,15 +5,12 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Z5 Receiving List</h1>
-                     <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Z5 PART RELEASE</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Z5 생산부품 입고 목록</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Z5 생산부품 출고 목록</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -22,10 +19,9 @@
                                         <tr>
                                         	<!-- <th>No</th> -->
                                         	<th>PART Number</th>
-  											<th>PART DESC</th>
-                                            <th>입고수량(Total)</th>
+  											<th>PART SPEC</th>
+                                            <th>출고수량</th>
                                             <th>가격</th>
-                                            <th>발주날짜</th>
                                             <th>입고날짜</th>
                                             <th>회사</th>
                                             <th>비고</th>
@@ -33,17 +29,15 @@
                                         </tr>
                                     </thead>
                                     <tbody id = "tableBody">
-                                          <c:forEach var="result" items="${getIncomList}" varStatus="status">
-									         <tr onclick = "IncomDetail(${result.icmId},${result.prdNo})">
-									          <%--  <th  >${result.icmId}</th> --%>
+                                          <c:forEach var="result" items="${getOutgoList}" varStatus="status">
+									         <tr onclick = "outgoDetail(${result.outId},${result.prdNo})">
 									           <th  >${result.prdNo}</th>
-									           <th  >${result.prdDesc}</th>
-									           <th  >${result.sumQty}</th>
-									           <th  >${result.icmPrice}</th>
-									           <th  >${result.icmOrderDate}</th>
-									           <th  >${result.lastIcmDate}</th>
-									           <th  >${result.lastIcmCompany}</th>
-									           <th  >${result.icmComment}</th>
+									           <th  >${result.prdSpec}</th>
+									           <th  >${result.outQty}</th>
+									           <th  >${result.outPrice}</th>
+									           <th  >${result.outDate}</th>
+									           <th  >${result.outCompanyName}</th>
+									           <th  >${result.outComment}</th>
 									          </tr>
 										  </c:forEach>  
                                     </tbody>

@@ -25,5 +25,9 @@ public class CompanyDAO {
 		return mapper.selectAll();
 	}
 
+	public void compnayInsert(CompanyVO companyVO) throws Exception {
+		mapper.compnayInsert(companyVO);
+	}
+
 
 }

@@ -13,5 +13,6 @@ public interface CompanyMapper {
 
 	public String selectCompany() throws Exception;
 	public List<CompanyVO> selectAll() throws Exception;
+	public void compnayInsert(CompanyVO companyVO) throws Exception;
 
 }

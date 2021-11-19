@@ -5,13 +5,19 @@
 <mapper namespace="com.ezds.erp.mapper.CompanyMapper">
   		
     <select id="selectCompany" resultType="String">
-  	SELECT company_name FROM ezds_erp.prd_company
+  	SELECT company_name FROM prd_company
 	where company_id = 1
 	</select>
 	
 	<select id="selectAll" resultType="CompanyVO">
-  	SELECT * FROM ezds_erp.prd_company order by company_id asc
+  	SELECT * FROM prd_company order by company_id ASC
 	</select>
+	
+	<insert id="compnayInsert" parameterType="CompanyVO">
+  	INSERT INTO prd_company 
+  				(company_name , company_type , company_tel , company_address) VALUES 
+  				(#{companyName} , #{companyType} , #{companyTel} , #{companyAddress})
+	</insert>
   
 
 </mapper>

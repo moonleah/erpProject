@@ -147,9 +147,8 @@
             </div>
 		
 	 <div class="w3-row es_center es_padding_30">
-               <!--     	<a  class="es_btn_edit"  href=# onclick="javascript:openProductSaleUpdate('productSaleList.saleSeq');" id="btnUpdate">Edit</a>-->
-                 	<a  class="es_btn_add"   href=# onclick="javascript:openProductSaleInsert();"                         id="btnInsert">ADD</a>
-	                <a  class="es_btn_close" href=# onclick="javascript: self.close();">CLOSE</a>
+            <button type="button" class="btn btn-primary" >Add</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript: self.close();" >Close</button>
 	 </div>
 </div>	
 

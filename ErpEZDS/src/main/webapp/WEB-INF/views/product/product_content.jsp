@@ -14,35 +14,45 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Z5 생산 부품 목록</h6>
+                             <a href="/" class="btn btn-success btn-circle btn-sm fa-pull-right">
+                                        <i class="fas fa-plus "></i>
+                             </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        	<th>No</th>
-                                        	<th>PART Number</th>
-  											<th>MAIN CATEGORY</th>
-                                            <th>SUB CATEGORY</th>
-                                            <th>DESCRIPTION</th>
-                                            <th>SPEC'</th>
+                                        	<th>PART NO</th>
+                                        	<th>SPEC'</th>
+  											<th>CATEGORY</th>
+                                            <th>SUBCATEGORY</th>
+                                            <th>DESC</th>
                                             <th>TYPE</th>
-                                            <th>OperatingTemp</th>
+                                            <th>Temp</th>
                                             <th>MAKER</th>  
+                                            <th>Setting<i class="fas fa-fw fa-cog"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${getProductList}" varStatus="status">
 									         <tr>
-									           <th value="${result.prdId}" >${result.prdId}</th>
 									           <th value="${result.prdNo}" >${result.prdNo}</th>
+									           <th value="${result.prdSpec}" >${result.prdSpec}</th>
 									           <th value="${result.cateName}" >${result.cateName}</th>
 									           <th value="${result.subCateName}" >${result.subCateName}</th>
 									           <th value="${result.prdDesc}" >${result.prdDesc}</th>
-									           <th value="${result.prdSpec}" >${result.prdSpec}</th>
 									           <th value="${result.prdType}" >${result.prdType}</th>
 									           <th value="${result.prdTemp}" >${result.prdTemp}</th>
 									           <th value="${result.prdMaker}" >${result.prdMaker}</th>
+									           <th>
+										            <a href="/" class="btn btn-danger btn-circle btn-sm fa-pull-right">
+						                                        <i class="fas fa-trash "></i>
+						                            </a>
+										            <a href="/" class="btn btn-info btn-circle btn-sm fa-pull-right" style = 'margin-right:3px;'>
+	                                        			<i class="fas fa-info-circle  "></i>
+	                             					</a>
+									           </th>
 									          </tr>
 										  </c:forEach>  
                                     </tbody>
