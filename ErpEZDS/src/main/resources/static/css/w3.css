@@ -30,15 +30,25 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 /* End extract */
 
-/* html,body{font-family: Arial,굴림체; font-size:9px;line-height:16px;} */
+/* html,body{font-family: Arial,援대┝泥�; font-size:9px;line-height:16px;} */
 /* html,body{font-family: 'Noto Sans Regular'; font-size:12px;line-height:16px;} */
-/* html {font-family: Malgun Gothic,"맑은 고딕","돋움",dotum,"굴림",gulim,verdana,arial,sans-serif; font-size:12px;line-height:16px;}
-body {font-family: 'nanumgothic', '맑은 고딕', 'Malgun Gothic', Microsoft NeoGothic, AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo',Droid sans, sans-serif; line-height:1.2;color:#666;font-size:14px;}
+/* html {font-family: Malgun Gothic,"留묒� 怨좊뵓","�룍��",dotum,"援대┝",gulim,verdana,arial,sans-serif; font-size:12px;line-height:16px;}
+body {font-family: 'nanumgothic', '留묒� 怨좊뵓', 'Malgun Gothic', Microsoft NeoGothic, AppleGothicNeoSD, 'Apple SD �궛�룎怨좊뵓 Neo',Droid sans, sans-serif; line-height:1.2;color:#666;font-size:14px;}
  */
  
-/* html, body  {font-family: 'Spoqa Han Sans', 'Sans-serif', Arial, '돋움', Dotum; font-size:12px;line-height:16px;} */
+/* html, body  {font-family: 'Spoqa Han Sans', 'Sans-serif', Arial, '�룍��', Dotum; font-size:12px;line-height:16px;} */
 
-html, body, p  {font-family: Nanum Gothic, sans-serif; font-size:12px;line-height:16px;}
+html, body, p  {
+  margin: 0;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #858796;
+  text-align: left;
+  background-color: #fff;
+}
+
 html {overflow-x:hidden}
 h1   {font-size:36px}
 h2   {font-size:30px}
@@ -49,7 +59,7 @@ h6   {font-size:16px}
 h1,h2,h3,h4,h5,h6{font-family:Noto Sans Bold;font-weight:400;margin:10px 0}
 hr   {border:0;border-top:1px solid #eee;margin:20px 0}
 
-/* ------- 占쏙옙占쏙옙占쏙옙 ----------------------------- 05C0EF */
+/* ------- �뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 ----------------------------- 05C0EF */
 .es-title        { font-weight:bold;   font-size:20px; font-family: "Noto Sans Bold"; color:#05C0EF; }
 .es-subtitle     { font-weight:bold;   font-size:16px; font-family: "Noto Sans Bold";}
 .es-content      { font-family: "Noto Sans Regular";}
@@ -68,7 +78,7 @@ hr   {border:0;border-top:1px solid #eee;margin:20px 0}
 
 
 
-/* --------  諛곌꼍�씠誘몄� 留덉슦�뒪�삤踰꾩떆 以뚯씤 */
+/* --------  獄쏄퀗瑗랃옙�뵠沃섎챷占� 筌띾뜆�뒭占쎈뮞占쎌궎甕곌쑴�뻻 餓λ슣�뵥 */
 .parent {   overflow: hidden; position: relative;  cursor: pointer;}
 .child {	height: 100%;background-size: cover;   background-position: center;   background-repeat: no-repeat;   
        -webkit-transition: all .5s;    -moz-transition: all .5s;    -o-transition: all .5s;    transition: all .5s;}
@@ -78,7 +88,7 @@ hr   {border:0;border-top:1px solid #eee;margin:20px 0}
 
 
 
-/*  占쏙옙占싱븝옙占� */
+/*  �뜝�룞�삕�뜝�떛釉앹삕�뜝占� */
 .easi-table        {padding: 0 5px; word-break:break-all;}
 .easi-table table  tr:first-child th{border-top:solid 1px #d9d9d9;}
 .easi-table table  tr:first-child td{border-top:solid 1px #d9d9d9;}
@@ -86,7 +96,7 @@ hr   {border:0;border-top:1px solid #eee;margin:20px 0}
 .easi-table table  tr td{ padding:5px 20px; border-bottom:solid 1px #d9d9d9; text-align:left; padding-left:10px;  }
 .easi-table input  { padding:6px 10px 6px 10px; border:solid 1px #eeeeee; text-align:left;  color:#666666;}
 
-/* 占쏙옙占싱쇽옙占쏙옙 占쏙옙占싱븝옙 */
+/* �뜝�룞�삕�뜝�떛�눦�삕�뜝�룞�삕 �뜝�룞�삕�뜝�떛釉앹삕 */
 
 .li-table        {padding: 0 5px; word-break:break-all;}
 .li-table table  tr:first-child th{border-top:solid 1px white;}
@@ -96,7 +106,7 @@ hr   {border:0;border-top:1px solid #eee;margin:20px 0}
 .li-table input  { padding:6px 10px 6px 10px; border:solid 1px #eeeeee; text-align:left;  color:#666666;}
 
 
-/*  占쏙옙占실ο옙占실ο옙占신몌옙占� */
+/*  �뜝�룞�삕�뜝�떎恝�삕�뜝�떎恝�삕�뜝�떊紐뚯삕�뜝占� */
 .disp_table {padding:0 10px; word-break:break-all;}
 .disp_table table thead tr th{background:#f5f5f5; border-top:solid 1px #002f6c; border-right:solid 1px #d9d9d9; height:50px; color:#202023;}
 .disp_table table thead tr th:last-child{border-right:none;}
@@ -137,14 +147,14 @@ hr   {border:0;border-top:1px solid #eee;margin:20px 0}
 	color:inherit;
 	background-color:transparent;text-align:center;cursor:pointer;white-space:nowrap}
 
-/* ----------占싱뱄옙占쏙옙占쏙옙타占쏙옙 ----------------------------------- */
+/* ----------�뜝�떛諭꾩삕�뜝�룞�삕�뜝�룞�삕���뜝�룞�삕 ----------------------------------- */
 .w3-img-h40{
 	height:25px!important;
 	margin:5px;
 
  }
 
-/* ----------占쏙옙占쏙옙占쏙옙占쏙옙 ----------------------------------- */
+/* ----------�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕�뜝�룞�삕 ----------------------------------- */
 .w3-margin{margin:16px!important}
 .w3-margin-small{margin:5px!important}
 .w3-margin32{margin:32px!important}
@@ -154,7 +164,7 @@ hr   {border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-margin-left{margin-left:16px!important}
 .w3-margin-right{margin-right:16px!important}
 
-/* ----------占싻듸옙占쏙옙占쏙옙 ----------------------------------- */
+/* ----------�뜝�떩�벝�삕�뜝�룞�삕�뜝�룞�삕 ----------------------------------- */
 .w3-padding-xsmall{padding:4px 2px!important}
 .w3-padding-small{padding:4px 8px!important}
 .w3-padding{padding:8px 16px!important}
@@ -180,8 +190,8 @@ hr   {border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-transparent,.w3-hover-none:hover{background-color:transparent!important}
 .w3-hover-none:hover{box-shadow:none!important}
 
-/* ----------占쏙옙占쏙옙 ----------------------------------- */
-/* -- Gootz占쏙옙占쏙옙 ---*/
+/* ----------�뜝�룞�삕�뜝�룞�삕 ----------------------------------- */
+/* -- Gootz�뜝�룞�삕�뜝�룞�삕 ---*/
 .w3-gootz-base,.w3-hover-gootz-base:hover  {color:#FFF!important;background-color:#45CEEB!important}
 .w3-gootz-air,.w3-hover-gootz-air:hover{color:#7E786A!important;background-color:#73CEE1!important}
 .w3-gootz-water,.w3-hover-gootz-water:hover{color:#4F5455!important;background-color:#F0F0F0!important}

@@ -43,39 +43,5 @@
 
             </div>
 <script>
-function tableCreate(){
-	  param = JSON.stringify(param);
-
-	    $.ajax({
-	        url : "/getProductList.do",
-	        data : param,
-	        type : 'post',
-	        success : function(data){
-	            var results = data.boardList;
-	            var str = '<TR>';
-	            $.each(results , function(i){
-	                str += 
-	                '<TD>' 
-	                + results[i].bdTitl + '</TD><TD>' 
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdRgDt + 
-	                '</TD>';
-	                str += '</TR>';
-	           });
-	           $("tableBody").append(str); 
-	        },
-	        error : function(){
-	            alert("error");
-	        }
-	    });	
-	
-				
-	}
 
 </script>

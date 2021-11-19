@@ -13,12 +13,16 @@ import com.ezds.erp.vo.ProductVO;
 public class ProductServiceImpl implements ProductService{
 
 	@Autowired
-	ProductDAO ProductDao;
+	ProductDAO productDao;
 
 	@Override
 	public List<ProductVO> getProductList() throws Exception {
-		// TODO Auto-generated method stub
-		return ProductDao.getProductList();
+		return productDao.getProductList();
+	}
+
+	@Override
+	public ProductVO getPrdDetail(Integer prdNo) throws Exception {
+		return productDao.getPrdDetail(prdNo);
 	}
 
 

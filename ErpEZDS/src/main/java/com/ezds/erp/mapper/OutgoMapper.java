@@ -10,9 +10,8 @@ import com.ezds.erp.vo.UserVO;
 
 
 @Mapper
-public interface IncomMapper {
+public interface OutgoMapper {
 
 	List<IncomVO> getIncomList(IncomVO icomVO) throws Exception;
-	List<IncomVO> getIcmDetailList(Integer prdNo) throws Exception;
 	
 }

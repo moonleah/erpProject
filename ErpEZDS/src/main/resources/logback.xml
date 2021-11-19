@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration>
+	<statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout  class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%F]%M\(%L\) : %m%n</pattern>
+		</layout>
+	</appender>
+	<appender name="SQLOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout  class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%F]%M\(%L\) : %n%m%n</pattern>
+		</layout>
+	</appender>
+	
+	<!-- 변수 지정 -->
+	<property name="LOG_DIR" value="C:\work\logs\erpGootz" />
+	<property name="LOG_PATH" value="${LOG_DIR}/erpGootz.log" />
+
+	<!-- FILE Appender -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH_NAME}</file>
+		<!-- 일자별로 로그파일 적용하기 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PATH_NAME}.%d{yyyyMMdd}</fileNamePattern>
+			<!-- <maxHistory>60</maxHistory> --> <!-- 일자별 백업파일의 보관기간 -->
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%F]%M\(%L\) : %m%n</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="java.sql" additivity="false">
+		<level value="OFF"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<logger name="log4jdbc.log4j2" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="jdbc" additivity="false">
+		<level value="OFF"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+    <logger name="jdbc.sqlonly" additivity="false">
+		<level value="INFO"/>
+		<appender-ref ref="SQLOUT"/>
+	</logger>
+	<logger name="jdbc.sqltiming" additivity="false">
+		<level value="INFO"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	<logger name="jdbc.audit" additivity="false">
+		<level value="OFF"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	<logger name="jdbc.resultset" additivity="false">
+		<level value="OFF"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	<logger name="jdbc.resultsettable" additivity="false">
+		<level value="OFF"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	<logger name="jdbc.connection" additivity="false">
+		<level value="OFF"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+	
+	<!-- TRACE > DEBUG > INFO > WARN > ERROR, 대소문자 구분 안함 -->
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

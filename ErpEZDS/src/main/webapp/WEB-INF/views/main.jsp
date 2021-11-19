@@ -34,7 +34,7 @@
 								<%-- 			 
 											 </c:if> --%>
 											 
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailModal">Launch demo modal</button>
+					<!-- 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailModal">Launch demo modal</button> -->
                                   
                                      <!-- Logout Modal-->
 						<%@ include file="modal/detailModal.jsp" %>
@@ -51,7 +51,7 @@
 			</div>
        </div>
            <!-- Logout Modal-->
-	<%@ include file="modal/logoutModal.jsp" %>
+	<%-- <%@ include file="modal/logoutModal.jsp" %> --%>
        
 <script type="text/javascript">
 

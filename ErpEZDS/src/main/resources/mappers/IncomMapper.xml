@@ -11,7 +11,17 @@
 			FROM   		prd_incoming_manage A 
 			LEFT JOIN 	prd_product_manage B 
 			ON 			A.prd_id = B.prd_id 
-            ORDER BY    A.icm_date DESC;
+            ORDER BY    A.icm_date DESC
+    </select>
+    
+    <select id="getIcmDetailList" parameterType="Integer" resultType="IncomVO">
+			SELECT 		A.icm_id, A.prd_id , B.prd_no , B.prd_desc , A.icm_qty , DATE_FORMAT(A.icm_order_date , '%Y-%m-%d') as icm_order_date ,
+			       		A.icm_price, A.icm_comment ,DATE_FORMAT(A.icm_date ,   '%Y-%m-%d') as icm_date , A.icm_company_name
+			FROM   		prd_incoming_manage A 
+			LEFT JOIN 	prd_product_manage B 
+			ON 			A.prd_id = B.prd_id 
+            WHERE 		B.prd_no = #{prdNo}
+            ORDER BY    A.icm_date DESC
     </select>
  
   

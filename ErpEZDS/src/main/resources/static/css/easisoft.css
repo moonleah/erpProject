@@ -1,10 +1,15 @@
 html {-ms-overflow-style:scrollbar;}
-@font-face {
-	  font-family: 'Acens';
-	  font-style: normal;
-	  src: url("${pageContext.request.contextPath}/resources/fonts/ttf/Acens.ttf") format('truetype');
-	 
+body {
+  margin: 0;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #858796;
+  text-align: left;
+  background-color: #fff;
 }
+
 #header {position:relative;z-index:10}
 
 textarea, input:matches(
@@ -64,7 +69,7 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 .page_subheader_title_md  { font-family: "Noto Sans Bold"; font-size:30px; line-height:12px; position: relative; top:0px;  color:black; letter-spacing: -2px;}
 .page_subheader_desc      { font-family: "Noto Sans KR";   font-size:14px; line-height:12px; position: relative; top:-10px;  color:black;}
 
-/* --------------------[ 占쎌몓揶쏄낱�굨占쎈꺗占쎈퓠 占쎌뵠沃섎챷占쏙옙援뱄옙�긾 / IE占쎈퓠占쎄퐣占쎈뮉 占쎈툧占쎈쭡 ]-------------------- */
+/* --------------------[ �뜝�럩紐볠뤆�룄�궞占쎄델�뜝�럥爰쀥뜝�럥�뱺 �뜝�럩逾졿쾬�꼶梨룟뜝�룞�삕�뤃諭꾩삕占쎄맘 / IE�뜝�럥�뱺�뜝�럡�맋�뜝�럥裕� �뜝�럥�닱�뜝�럥彛� ]-------------------- */
 .poligon {
   display: inline-block;   position: relative;  width: 150px;  height: 150px;  background: black;  box-sizing: border-box;
   -webkit-clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
@@ -108,13 +113,13 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 
 .no_border{border:none}
 
-/* 프로필사진 */
+/* �봽濡쒗븘�궗吏� */
 .profile_img            {  border-radius:50%;overflow:hidden;border: none; display:inline-block;background-size:cover;background-repeat:no-repeat;background-position:center;vertical-align:middle; }
 .bg_img                 {  overflow:hidden;border: none; display:inline-block;background-size:cover;background-repeat:no-repeat;background-position:center;vertical-align:middle; }
 
 #screen_head{overflow:hidden}
 
-/* 검색바 */
+/* 寃��깋諛� */
 .es_searchbar{float:left;width:100%;padding:10px 5px 10px 5px;margin-top:10px;display:flex;flex-direction:row;justify-content:flex-end;align-items:center;border:1px solid #aaa;border-radius:3px;background:#f9f9f9;}
 .es_searchbar .es_search_option_wrap{flex:1;}
 .es_searchbar .es_search_option_wrap .es_search_desc         { padding-left:20px;float:left; color: #46301B;}
@@ -142,8 +147,8 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 	.es_radio > label {text-align:center;margin:0;padding:0;margin-left:3px;font-size:12px;padding-bottom:3px}
 }
 
-/* ------------기본색상 ------------- */
-.es_ezds_color           { color: #E00C08;}     /*  이지디에스-진홍색   */
+/* ------------湲곕낯�깋�긽 ------------- */
+.es_ezds_color           { color: #E00C08;}     /*  �씠吏��뵒�뿉�뒪-吏꾪솉�깋   */
 
 .es_base_text            { color:  #4876EF; }
 .es_base_color           { color:  #4876EF; }
@@ -155,7 +160,7 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 .es_head_update          { border:1px solid #ccc; background-color: #15a846; color: white; padding:10px; border-radius:5px; margin: 1px 0px; text-align: center;}
 .es_head_insert          { border:1px solid #ccc; background-color: #9966ff; color: white; padding:10px; border-radius:5px; margin: 1px 0px; text-align: center;}
 .es_screen_title         { font-weight:bold; font-size:26px; color:#111111; position: relative; top: 5px; font-family: "Noto Sans Bold";}
-.es_erp_footer           { min-height: 200px; background-color: #f0f0f0; color: #111111;}   /* ERP화면바닥글스타일 */
+.es_erp_footer           { min-height: 200px; background-color: #f0f0f0; color: #111111;}   /* ERP�솕硫대컮�떏湲��뒪���씪 */
 
 .es_btn_sm                {margin:3px; border-radius:3px; padding: 4px 8px; border:1px solid #000;background-color: transparent; color:#111111; }
 .es_btn_sm:hover          {margin:3px; border-radius:3px; padding: 4px 8px; border:0px solid #FFF;background-color: #000; color:#FFF;}
@@ -365,8 +370,8 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 /* -----------  DIV TABLE CSS ----------------------------------------------------*/
 .es_div_table                { display: table; width: 100%;}
 .es_div_table .es_row        { display: table-row;}
-.es_div_table .es_cell_title { display: table-cell; padding: 10px 10px; border-bottom: 1px solid #aaa; background-color:#f0f0f0; font-weight:bold; font-size:16px;}
-.es_div_table .es_cell_thead { display: table-cell; padding: 4px 10px; border-bottom: 1px solid #aaa; background-color:#f0f0f0; font-weight:bold; color: #003cb3}
+.es_div_table .es_cell_title { display: table-cell; padding: 10px 10px; border-bottom: 1px solid #e3e6f0; background-color:#f0f0f0; font-weight:bold; font-size:16px;}
+.es_div_table .es_cell_thead { display: table-cell; padding: 4px 10px; border-bottom: 1px solid #e3e6f0; background-color:#f0f0f0; font-weight:bold; color: #003cb3}
 .es_div_table .es_cell_th    { display: table-cell; padding: 4px 10px; border-bottom: 1px solid #ddd; background-color:#f6f6f6; font-weight:bold;}
 .es_div_table .es_cell_td    { display: table-cell; padding: 4px 10px; border-bottom: 1px solid #ddd; background-color:#ffffff; min-height:25px;}
 
@@ -432,7 +437,7 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 
 .es_table_wrapper{ width:100%; overflow-x:auto; white-space:nowrap }
 
-/* 테이블 스타일 반응형 css */
+/* �뀒�씠釉� �뒪���씪 諛섏쓳�삎 css */
 .es_table_style{display:block;	position:relative;	border-top:solid 2px #4876EF;}
 .es_table_style1:after{	content:"";	position:absolute;	top:0;	right:0;	background:#fff;	width:2px;	height:100%;}
 .es_table_style .thead{	display:block;}
@@ -498,10 +503,10 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 }
 
 
- /* 페이지넘기기 스크롤바아이콘    */
+ /* �럹�씠吏��꽆湲곌린 �뒪�겕濡ㅻ컮�븘�씠肄�    */
 .scroll_top a       {  padding: 15px; position: relative; left: 47%; bottom: 20px;  width: 60px;  height: 60px; border-radius:50%;   background-color: #33ccff; z-index: 2; display: inline-block;       }
 
-/* -----------DETAIL TAB T공병기 TAB영역만들기  START ---*/
+/* -----------DETAIL TAB T怨듬퀝湲� TAB�쁺�뿭留뚮뱾湲�  START ---*/
 .tab-bg-color {background-color: #f3f3f3; transition-duration: .02s;  border-top:solid 2px #4876EF; }
 .text-color {color: #111111; transition-duration: .05s; }
 .wrapper {min-width: 100%; max-width: 1200px; margin: 0 auto; }
@@ -516,7 +521,7 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 .tab__content { background-color: white; position: relative; width: 100%; border-radius: 5px;  padding: 0; margin: 0;} 
 .tab__content > li {width: 100%; position: absolute; top: 0; left: 0; display: none; list-style: none; } 
 .tab__content > li .content__wrapper {text-align: left; border-radius: 5px; width: 100%; padding: 25px 20px 20px 20px; background-color: white; }
-/* -----------DETAIL TAB  공병기 TAB영역만들기  END ---*/	
+/* -----------DETAIL TAB  怨듬퀝湲� TAB�쁺�뿭留뚮뱾湲�  END ---*/	
 	
 	
 .nav                   {  padding-left: 0;		 margin-bottom: 0;	 list-style: none; }
@@ -590,12 +595,12 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 .timeline-info     {  font-size: 14px;  letter-spacing: 0px;  margin: 0 0 .5em 0;  text-transform: uppercase;  white-space: nowrap;}
 
 .timeline-marker   {  position: absolute;  top: 0;  bottom: 0;  left: 0;  width: 15px;}
-/* 留됰��꽑 �뫁洹쇱씠�젙�몴留덊겕 */
+/* 筌띾맧占쏙옙苑� 占쎈쳛域뱀눘�뵠占쎌젟占쎈ご筌띾뜇寃� */
 .timeline-marker:before {  background: #008761;  border: 3px solid transparent;
   border-radius: 100%;  content: "";  display: block;  height: 15px;  position: absolute;  top: 4px;  left: 0;  width: 15px;
   transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
 }
-/* ���엫�씪�씤 留됰��꽑 */
+/* 占쏙옙占쎌뿫占쎌뵬占쎌뵥 筌띾맧占쏙옙苑� */
 .timeline-marker:after {  content: "";  width: 1px;  background: #666666;  display: block;  position: absolute;  top: 24px;  bottom: 0;  left: 6px;}  
            
 .timeline-content               {  font-size:12px; color:#666666; padding-bottom: 6px;}

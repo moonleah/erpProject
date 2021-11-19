@@ -16,12 +16,12 @@ public class ProductDAO {
 	@Autowired
 	private ProductMapper mapper;
 	
-	private SqlSession sqlSession ;
-	
-	
 
 	public List<ProductVO> getProductList()  throws Exception {
 		return mapper.getProductList();
+	}
+	public ProductVO getPrdDetail(Integer prdNo) throws Exception {
+		return mapper.getPrdDetail(prdNo);
 	}
 
 

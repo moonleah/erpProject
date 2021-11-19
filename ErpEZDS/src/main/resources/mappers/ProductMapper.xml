@@ -15,6 +15,18 @@
 		ORDER BY        prd_id ASC;
 
     </select>
+    
+       <!-- 인터셉터 후 세션에 등록 -->
+    <select id="getPrdDetail" parameterType="Integer" resultType="ProductVO">
+		SELECT * FROM   prd_product_manage A 
+		left join 		prd_part_category B 
+		ON 				A.cate_id = B.cate_id
+		left join 		prd_part_sub_category C 
+		ON				A.sub_cate_id = C.sub_cate_id 
+		where 			A.prd_no = #{prdNo} 
+		
+
+    </select>
  
   
 

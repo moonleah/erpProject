@@ -5,6 +5,7 @@ public class ProductVO {
 	private Integer prdId;
 	private Integer cateId;
 	private Integer subCateId;
+	private Integer prdQty;
 	private String prdNo;
 	private String prdDesc;
 	private String prdSpec;
@@ -96,5 +97,12 @@ public class ProductVO {
 	public void setSubCateName(String subCateName) {
 		this.subCateName = subCateName;
 	}
+	public Integer getPrdQty() {
+		return prdQty;
+	}
+	public void setPrdQty(Integer prdQty) {
+		this.prdQty = prdQty;
+	}
+	
 	
 }

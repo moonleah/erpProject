@@ -6,14 +6,17 @@
   		
     
     <select id="getIvtList" parameterType="InventoryVO" resultType="InventoryVO">
-       SELECT C.prd_no , C.prd_desc, A.icm_sum_qty , B.out_sum_qty , (A.icm_sum_qty - B.out_sum_qty) as ivtTotal , C.prd_qty , FLOOR((A.icm_sum_qty - B.out_sum_qty) / C.prd_qty) as avlPrdQty
+   SELECT 		C.prd_no , C.prd_spec, A.icm_sum_qty , B.out_sum_qty , (A.icm_sum_qty - B.out_sum_qty) as ivtTotal , C.prd_qty , D.cate_name,
+   			 	FLOOR((A.icm_sum_qty - B.out_sum_qty) / C.prd_qty) as avlPrdQty
      FROM 
-         (   SELECT prd_id as A , sum(icm_qty)  as icm_sum_qty 	FROM prd_incoming_manage group by prd_id ) A
+         (   	SELECT prd_id as A , sum(icm_qty)  as icm_sum_qty 	FROM prd_incoming_manage group by prd_id ) A
      JOIN          
-           (   SELECT 	prd_id as B, sum(out_qty) as out_sum_qty FROM prd_outgoing_manage group by prd_id ) B  
+         (   	SELECT prd_id as B, sum(out_qty) as out_sum_qty FROM prd_outgoing_manage group by prd_id ) B  
        ON		A.A =B.B 
      JOIN 		prd_product_manage C 
-       ON 		C.prd_id = A.A;
+       ON 		C.prd_id = A.A
+	 JOIN   	prd_part_category D
+       ON		D.cate_id = C.cate_id
     </select>
     
  

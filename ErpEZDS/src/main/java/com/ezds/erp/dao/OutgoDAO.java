@@ -9,17 +9,14 @@ import com.ezds.erp.mapper.IncomMapper;
 import com.ezds.erp.vo.IncomVO;
 
 @Component
-public class IncomDAO {
+public class OutgoDAO {
 	
 	@Autowired
 	private IncomMapper mapper;
 
 	public List<IncomVO> getIncomList(IncomVO incomVO) throws Exception {
+		
 		return mapper.getIncomList(incomVO);
-	}
-
-	public List<IncomVO> getIcmDetailList(Integer prdNo) throws Exception {
-		return mapper.getIcmDetailList(prdNo);
 	}
 	
 

@@ -5,7 +5,8 @@ public class InventoryVO { //인벤토리
 	
 	private Integer ivtId; 
 	private Integer prdNo; 
-	private String prdDesc;
+	private String prdSpec;
+	private String cateName;
 	private Integer icmSumQty;
 	private Integer outSumQty;
 	private Integer ivtTotal;
@@ -24,11 +25,17 @@ public class InventoryVO { //인벤토리
 	public void setPrdNo(Integer prdNo) {
 		this.prdNo = prdNo;
 	}
-	public String getPrdDesc() {
-		return prdDesc;
+	public String getPrdSpec() {
+		return prdSpec;
 	}
-	public void setPrdDesc(String prdDesc) {
-		this.prdDesc = prdDesc;
+	public void setPrdSpec(String prdSpec) {
+		this.prdSpec = prdSpec;
+	}
+	public String getCateName() {
+		return cateName;
+	}
+	public void setCateName(String cataName) {
+		this.cateName = cataName;
 	}
 	public Integer getIcmSumQty() {
 		return icmSumQty;

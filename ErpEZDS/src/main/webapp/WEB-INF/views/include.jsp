@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!-- ===================== 메타정보설정  ======================  -->
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
@@ -33,6 +33,7 @@
     <script src="${pageContext.request.contextPath}/static/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="${pageContext.request.contextPath}/static/js/sb-admin-2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/common.js"></script>
     <!-- Page level plugins -->
     <script src="${pageContext.request.contextPath}/static/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/vendor/datatables/dataTables.bootstrap4.min.js"></script>

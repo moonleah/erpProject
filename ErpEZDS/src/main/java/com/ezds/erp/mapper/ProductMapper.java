@@ -11,4 +11,6 @@ import com.ezds.erp.vo.ProductVO;
 public interface ProductMapper {
 	
 	public List<ProductVO> getProductList() throws Exception;
+
+	public ProductVO getPrdDetail(Integer prdNo)  throws Exception;
 }

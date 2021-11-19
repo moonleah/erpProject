@@ -12,12 +12,13 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="ivtTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                         	<!-- <th>No</th> -->
                                         	<th>PART Number</th>
-  											<th>PART DESC</th>
+  											<th>PART SPEC'</th>
+  											<th>Category</th>
                                             <th>입고수량(Total)</th>
  	                                        <th>출고수량(Total)</th>
                                             <th>재고수량(Total)</th>
@@ -27,9 +28,10 @@
                                     </thead>
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${getIvtList}" varStatus="status">
-									         <tr onclick = "IvtDetail(${result.prdNo})">
+									         <tr onclick = "openIvtDetail(${result.prdNo})" style="cursor: pointer;">
 									           <th  >${result.prdNo}</th>
-									           <th  >${result.prdDesc}</th>
+									           <th  >${result.prdSpec}</th>
+									           <th  >${result.cateName}</th>
 									           <th  >${result.icmSumQty}</th>
 									           <th  >${result.outSumQty}</th>
 									           <th  >${result.ivtTotal}</th>
@@ -44,58 +46,43 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" onclick="detail()" data-target="#detailModal">클릭해서 나오는 modal</button>
-                                  
-			<%-- <%@ include file="ivt_modal.jsp" %> --%>
 <script>
 
 $(document).ready(function() {
-	/*   $('#icmTable').DataTable();
-	  $('#outTable').DataTable(); */
+	   $('#ivtTable').DataTable();
 	});
 
-function detail(){
-	window.open("/user/popup", "PopupWin", 'width=1000px,height=800px,scrollbars=yes');
-
+function openIvtDetail(p_prdNo){
+	openPopup("/user/ivtDetail", "openProductSaleDetail", 1000, 700, {prdNo: parseInt(p_prdNo) });
 }
 
 
-
-/* 
-
-function IvtDetail(){
-	  param = JSON.stringify(param);
-
-	    $.ajax({
-	        url : "/getProductList.do",
+/* function IvtDetail(p_prdNo){  //개별디테일 
+	var src_width =screen.availWidth;
+	var src_height =screen.availHeight;
+	var param = new Object();
+	param.prdNo = parseInt(p_prdNo);
+	
+	console.log(p_prdNo);
+	 $.ajax({
+	        url : "/user/ivtDetail",
 	        data : param,
 	        type : 'post',
 	        success : function(data){
-	            var results = data.boardList;
-	            var str = '<TR>';
-	            $.each(results , function(i){
-	                str += 
-	                '<TD>' 
-	                + results[i].bdTitl + '</TD><TD>' 
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdRgDt + 
-	                '</TD>';
-	                str += '</TR>';
-	           });
-	           $("tableBody").append(str); 
+	        	console.log(data);
+	        	window.open(data);
+	        	
 	        },
 	        error : function(){
 	            alert("error");
 	        }
-	    });	
+	 });
 	
-				
-	} */
+
+	//window.open("/user/popup", "PopupWin", 'top=0,left=0, width='+src_width+',height='+src_height+',scrollbars=yes');
+
+}
+ */
+
 
 </script>
