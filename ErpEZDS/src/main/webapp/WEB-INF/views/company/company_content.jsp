@@ -18,9 +18,10 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="companyTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                        	<!-- <th><input type="checkbox" onclick="checkAll(this)"></th> -->
 											<th>NO</th>                                        
                                             <th>Company Name</th>
                                             <th>Company Type</th>
@@ -32,6 +33,7 @@
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${selectList}" varStatus="status">
 									         <tr>
+									           <!-- <th><input type="checkbox" name=""></th> -->
 									           <th >${status.count}</th>
 									           <th >${result.companyName}</th>
 									           <th >${result.companyType}</th>
@@ -60,6 +62,21 @@
 
             </div>
 <script>
+$(document).ready(function() {
+	   $('#companyTable').DataTable();   
+	   
+	   
+	});
+
+function checkAll(bx) {
+	  var cbs = document.getElementsByTagName('input');
+	  for(var i=0; i < cbs.length; i++) {
+	    if(cbs[i].type == 'checkbox') {
+	      cbs[i].checked = bx.checked;
+	    }
+	  }
+	}
+
 function companyAdd(){
 	openPopup("/user/companyAdd", "openProductSaleDetail", 1000, 700);
 }

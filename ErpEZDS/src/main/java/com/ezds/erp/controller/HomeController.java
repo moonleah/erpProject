@@ -17,7 +17,9 @@ public class HomeController {
 		if(principal != null) { 
 		System.out.println(principal.getName());
 		System.out.println(principal.toString());
-		return "redirect:/user/ivt"; //로그인정보가 있을 경우 
+		
+		
+		return "index"; //로그인정보가 있을 경우 
 		}
 		
 		return "main"; //로그인 페이지 

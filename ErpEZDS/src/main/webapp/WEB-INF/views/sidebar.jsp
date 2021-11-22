@@ -33,7 +33,7 @@
             <!-- Nav Item - Tables -->
             <li class="nav-item" >
                 <a class="nav-link" href="/user/company">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="far fa-building"></i>
                     <span>Company</span></a>
             </li>
             <li class="nav-item ">
@@ -78,16 +78,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="/user/icm">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>prd Part receipt</span></a>
+                    <span>Part receipt</span></a>
             </li>
             
             <li class="nav-item">
                 <a class="nav-link" href="/user/out">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>prd Part release</span></a>
+                    <span>Part release</span></a>
             </li>
             
-             <li class="nav-item">
+          <!--    <li class="nav-item">
                 <a class="nav-link" href="/user/getIncomTotalList">
                     <i class="fas fa-fw fa-table"></i>
                     <span>product receipt</span></a>
@@ -97,7 +97,7 @@
                 <a class="nav-link" href="/user/getIncomTotalList">
                     <i class="fas fa-fw fa-table"></i>
                     <span>product release</span></a>
-            </li>
+            </li> -->
             
 
             <!-- Divider -->
@@ -114,5 +114,8 @@
         
         
 <script>
+$("#accordionSidebar").on('click','li',function(){
+	$(this).addClass(" active")
+});
 
 </script> 

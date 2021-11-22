@@ -7,7 +7,7 @@
     
     <select id="getIvtList" parameterType="InventoryVO" resultType="InventoryVO">
    SELECT 		C.prd_no , C.prd_spec, A.icm_sum_qty , B.out_sum_qty , (A.icm_sum_qty - B.out_sum_qty) as ivtTotal , C.prd_qty , D.cate_name,
-   			 	FLOOR((A.icm_sum_qty - B.out_sum_qty) / C.prd_qty) as avlPrdQty
+   			 	FLOOR((A.icm_sum_qty - B.out_sum_qty) / C.prd_qty) as avlPrdQty , C.prd_moq
      FROM 
          (   	SELECT prd_id as A , sum(icm_qty)  as icm_sum_qty 	FROM prd_incoming_manage group by prd_id ) A
      JOIN          

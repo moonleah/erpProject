@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!-- ===================== 메타정보설정  ======================  -->
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
 <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
@@ -22,11 +23,11 @@
 
     <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/static/css/sb-admin-2.css" rel="stylesheet">
- <!-- Custom styles for this page -->
+	 <!-- Custom styles for this page -->
     <link href="${pageContext.request.contextPath}/static/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 <!-- ===================== 자바스크립트 불러오기  ======================  -->
- <!-- Bootstrap core JavaScript-->
+ 	<!-- Bootstrap core JavaScript-->
     <script src="${pageContext.request.contextPath}/static/vendor/jquery/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
@@ -38,8 +39,9 @@
     <script src="${pageContext.request.contextPath}/static/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="${pageContext.request.contextPath}/static/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <!-- Page level custom scripts -->
-     <script src="${pageContext.request.contextPath}/static/js/demo/datatables-demo.js"></script>
+    <script src="${pageContext.request.contextPath}/static/js/demo/datatables-demo.js"></script>
 
-
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.3/b-2.0.1/date-1.1.1/sl-1.3.3/datatables.min.css"/>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.3/b-2.0.1/date-1.1.1/sl-1.3.3/datatables.min.js"></script> -->
 
 

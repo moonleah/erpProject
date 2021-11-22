@@ -16,7 +16,7 @@
     <div class="w3-row content es_padding_20">  
       <div class="es_border es_border_gray es_padding_16">       
              <div class="w3-row es_row">
-       			<div class="w3-col l12  m12  s12  font-NotoSansBold es_size_16 es_text_lineheight_30 es_padding_10">PRODUCT PART COMPANY</div>
+       			<div class="w3-col l12  m12  s12  font-NotoSansBold es_size_16 es_text_lineheight_30 es_padding_10">PRODUCT PART INFO</div>
             </div>
 			<div class="w3-row">  
 			

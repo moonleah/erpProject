@@ -6,6 +6,7 @@ public class ProductVO {
 	private Integer cateId;
 	private Integer subCateId;
 	private Integer prdQty;
+	private Integer prdMoq;
 	private String prdNo;
 	private String prdDesc;
 	private String prdSpec;
@@ -102,6 +103,12 @@ public class ProductVO {
 	}
 	public void setPrdQty(Integer prdQty) {
 		this.prdQty = prdQty;
+	}
+	public Integer getPrdMoq() {
+		return prdMoq;
+	}
+	public void setPrdMoq(Integer prdMoq) {
+		this.prdMoq = prdMoq;
 	}
 	
 	

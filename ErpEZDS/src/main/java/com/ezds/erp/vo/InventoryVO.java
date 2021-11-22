@@ -11,6 +11,7 @@ public class InventoryVO { //인벤토리
 	private Integer outSumQty;
 	private Integer ivtTotal;
 	private Integer prdQty;
+	private Integer prdMoq;
 	private Integer avlPrdQty;
 	
 	public Integer getIvtId() {
@@ -66,6 +67,12 @@ public class InventoryVO { //인벤토리
 	}
 	public void setAvlPrdQty(Integer avlPrdQty) {
 		this.avlPrdQty = avlPrdQty;
+	}
+	public Integer getPrdMoq() {
+		return prdMoq;
+	}
+	public void setPrdMoq(Integer prdMoq) {
+		this.prdMoq = prdMoq;
 	}
 
 	

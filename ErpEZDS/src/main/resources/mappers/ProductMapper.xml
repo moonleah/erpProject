@@ -7,7 +7,7 @@
     <!-- 인터셉터 후 세션에 등록 -->
     <select id="getProductList" parameterType="ProductVO" resultType="ProductVO">
 		SELECT 
-						A.prd_id ,A.prd_no , B.cate_name , C.sub_cate_name, 
+						A.prd_id ,A.prd_no , B.cate_name , C.sub_cate_name, A.prd_moq,  A.prd_qty,
 						A.prd_spec, A.prd_desc ,  A.prd_tol, A.prd_temp, A.prd_type, A.prd_maker , A.update_date
 		FROM 			prd_product_manage A 
 		LEFT JOIN 		prd_part_category B ON A.cate_id = B.cate_id 

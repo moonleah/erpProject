@@ -42,18 +42,22 @@
 		                          <div class="w3-col l2   m2   s12    es_cell_th">Product Qty</div>
 		                         <div class="w3-col l4   m4   s12   es_cell_td">${prdInfo.prdQty}</div>
 		                         
-		                         
 		                         <div class="w3-col l2   m2   s12    es_cell_th">Category</div>
 		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.cateName}</div>
 		                          <div class="w3-col l2   m2   s12    es_cell_th">Sub Category</div>
 		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.subCateName}</div>
 		                         
-		                         
-		                         
 		                         <div class="w3-col l2   m2   s12    es_cell_th">OperatingTemp</div>
 		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.prdTemp}</div>
 		                         <div class="w3-col l2   m2   s12    es_cell_th">Product Maker</div>
 		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.prdMaker}</div>
+		                         
+		                         <div class="w3-col l2   m2   s12    es_cell_th">Product MOQ</div>
+		                         <div class="w3-col l10   m10   s12    es_cell_td">${prdInfo.prdMoq}</div>
+		                       <%--   <div class="w3-col l2   m2   s12    es_cell_th">Product Moq</div>
+		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.prdMoq}</div> --%>
+		                         
+		                         
 		                     </div>
                     </div> <!-- DIV테이블 끝 -->
             

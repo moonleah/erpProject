@@ -17,7 +17,7 @@ public class PrincipalDetails implements UserDetails{
 		if(this.user == null) {
 			System.out.println("NULL  : " + user);
 		}
-		System.out.println("principal  : " + user);
+		System.out.println("principal  : " + this.user);
 	}
 	//해당user의 권한을 리턴
 	@Override

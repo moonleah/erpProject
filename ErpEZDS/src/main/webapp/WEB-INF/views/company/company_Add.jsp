@@ -7,7 +7,7 @@
 <head>
     <%@ include file="../include.jsp"%> 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/w3.css"> 
-     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/easisoft.css"> 
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/easisoft.css"> 
 </head> 
 <body>
 <div  class=" userInfoPop" style="min-height: 100%">
@@ -53,12 +53,11 @@
 
 <script>
 //Call the dataTables jQuery plugin
-$(document).ready(function() {
-	   $('#icmTable').DataTable();
-	   $('#outTable').DataTable();
-	});
+
 	
-	function companyInsert(){
+	
+
+function companyInsert(){
 		var param = new Object();
 		
 		param.companyName      	   = $('#companyName').val();
@@ -73,6 +72,7 @@ $(document).ready(function() {
 		        success : function(data){
 		        	opener.parent.location.reload();
 		        	window.close();
+		        	alert("success");
 		        },
 		        error : function(){
 		            alert("error");

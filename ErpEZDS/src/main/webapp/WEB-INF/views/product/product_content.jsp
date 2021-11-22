@@ -30,7 +30,9 @@
                                             <th>DESC</th>
                                             <th>TYPE</th>
                                             <th>Temp</th>
-                                            <th>MAKER</th>  
+                                            <th>MAKER</th>
+                                            <th>QTY</th>  
+                                            <th>MOQ</th>  
                                             <th>Setting<i class="fas fa-fw fa-cog"></i></th>
                                         </tr>
                                     </thead>
@@ -45,6 +47,8 @@
 									           <th value="${result.prdType}" >${result.prdType}</th>
 									           <th value="${result.prdTemp}" >${result.prdTemp}</th>
 									           <th value="${result.prdMaker}" >${result.prdMaker}</th>
+									           <th value="${result.prdQty}" >${result.prdQty}</th>
+									           <th value="${result.prdMoq}" >${result.prdMoq}</th>
 									           <th>
 										            <a href="/" class="btn btn-danger btn-circle btn-sm fa-pull-right">
 						                                        <i class="fas fa-trash "></i>

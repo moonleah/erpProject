@@ -18,6 +18,7 @@
                                     <thead>
                                         <tr>
                                         	<!-- <th>No</th> -->
+                                        	<th>No</th>
                                         	<th>PART Number</th>
   											<th>PART SPEC</th>
                                             <th>출고수량</th>
@@ -31,6 +32,7 @@
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${getOutgoList}" varStatus="status">
 									         <tr onclick = "outgoDetail(${result.outId},${result.prdNo})">
+									           <th  >${status.count}</th>
 									           <th  >${result.prdNo}</th>
 									           <th  >${result.prdSpec}</th>
 									           <th  >${result.outQty}</th>
