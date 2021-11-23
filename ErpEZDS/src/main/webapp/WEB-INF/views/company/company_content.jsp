@@ -59,7 +59,7 @@
 
                 </div>
                 <!-- /.container-fluid -->
-
+				<%@ include file="../modal/deleteModal.jsp" %>
             </div>
 <script>
 $(document).ready(function() {
@@ -90,19 +90,20 @@ function companyUpdate(p_id){
 function companyDelete(p_id){
 	var param = new Object();
 	param.companyId      	   = p_id;
-	
+	$("#deletModal").modal("show");
+	$("#delete").click(function(){	
 	 $.ajax({
 	        url : "/user/companyDelete",
 	        data : param,
 	        type : 'post',
 	        success : function(data){
 	        	location.reload();
-	        	alert("delete success");
 	        },
 	        error : function(){
 	            alert("error");
 	        }
 	 });
+	})
 }
 
 

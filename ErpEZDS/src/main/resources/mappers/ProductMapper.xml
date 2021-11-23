@@ -13,10 +13,8 @@
 		LEFT JOIN 		prd_part_category B ON A.cate_id = B.cate_id 
 		LEFT JOIN 		prd_part_sub_category C ON A.sub_cate_id = C.sub_cate_id 
 		ORDER BY        prd_id ASC;
-
     </select>
     
-       <!-- 인터셉터 후 세션에 등록 -->
     <select id="getPrdDetail" parameterType="Integer" resultType="ProductVO">
 		SELECT * FROM   prd_product_manage A 
 		left join 		prd_part_category B 
@@ -24,10 +22,52 @@
 		left join 		prd_part_sub_category C 
 		ON				A.sub_cate_id = C.sub_cate_id 
 		where 			A.prd_no = #{prdNo} 
-		
-
+    </select>
+    
+     <select id="getProductOne" parameterType="ProductVO" resultType="ProductVO">
+		SELECT * FROM   prd_product_manage A 
+		left join 		prd_part_category B 
+		ON 				A.cate_id = B.cate_id
+		left join 		prd_part_sub_category C 
+		ON				A.sub_cate_id = C.sub_cate_id 
+		where 			A.prd_id = #{prdId} 
     </select>
  
+ 	<select id="getCateList"  resultType="ProductVO">
+		SELECT * FROM   prd_part_category
+    </select>
+ 
+   <select id="getSubCateList" resultType="ProductVO">
+		SELECT * FROM   prd_part_sub_category 
+   </select>
+ 
+   <insert id="productInsert" parameterType="CompanyVO">
+  	INSERT INTO prd_product_manage 
+					   (cate_id,sub_cate_id, prd_no , prd_desc, prd_spec , prd_tol, prd_temp , prd_type , prd_qty, prd_moq, prd_maker) 
+  				VALUES 
+  				(#{cateId}, #{subCateId}, #{prdNo}, #{prdDesc}, #{prdSpec}, #{prdTol}, #{prdTemp}, #{prdType}, #{prdQty}, #{prdMoq}, #{prdMaker})
+	</insert>
+	
+	<update id="productUpdate" parameterType="CompanyVO">
+	UPDATE prd_product_manage SET 
+							cate_id 		= #{cateId},
+							sub_cate_id 	= #{subCateId},
+							prd_no 			= #{prdNo},
+							prd_desc 		= #{prdDesc},
+							prd_spec 		= #{prdSpec}, 
+							prd_tol 		= #{prdTol},
+							prd_temp 		= #{prdTemp},
+							prd_type 		= #{prdType},
+							prd_qty			= #{prdQty},
+							prd_moq			= #{prdMoq},
+							prd_maker		= #{prdMaker}
+					 WHERE  prd_id = #{prdId}
+	</update>
+	
+	<delete id="productDelete" parameterType="CompanyVO">
+	DELETE FROM prd_product_manage WHERE  prd_id = #{prdId}
+	</delete>
+  
   
 
 </mapper>

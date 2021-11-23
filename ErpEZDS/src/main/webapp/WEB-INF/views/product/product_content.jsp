@@ -6,15 +6,12 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Z5 생산 부품 목록</h1>
-                     <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Z5 생산 부품 목록</h6>
-                             <a href="/" class="btn btn-success btn-circle btn-sm fa-pull-right">
+                             <a href="#" onclick="productAdd()" class="btn btn-success btn-circle btn-sm fa-pull-right">
                                         <i class="fas fa-plus "></i>
                              </a>
                         </div>
@@ -31,6 +28,7 @@
                                             <th>TYPE</th>
                                             <th>Temp</th>
                                             <th>MAKER</th>
+                                            <th>TOL</th>
                                             <th>QTY</th>  
                                             <th>MOQ</th>  
                                             <th>Setting<i class="fas fa-fw fa-cog"></i></th>
@@ -47,13 +45,14 @@
 									           <th value="${result.prdType}" >${result.prdType}</th>
 									           <th value="${result.prdTemp}" >${result.prdTemp}</th>
 									           <th value="${result.prdMaker}" >${result.prdMaker}</th>
+									           <th value="${result.prdTol}" >${result.prdTol}</th>
 									           <th value="${result.prdQty}" >${result.prdQty}</th>
 									           <th value="${result.prdMoq}" >${result.prdMoq}</th>
-									           <th>
-										            <a href="/" class="btn btn-danger btn-circle btn-sm fa-pull-right">
+									           <th><!-- data-toggle="modal" data-target="#my-modal" --> 
+										            <a href="#"   onclick="productDelete(${result.prdId})"  class="btn btn-danger btn-circle btn-sm fa-pull-right">
 						                                        <i class="fas fa-trash "></i>
 						                            </a>
-										            <a href="/" class="btn btn-info btn-circle btn-sm fa-pull-right" style = 'margin-right:3px;'>
+										            <a href="#" onclick="productUpdate(${result.prdId})" class="btn btn-info btn-circle btn-sm fa-pull-right" style = 'margin-right:3px;'>
 	                                        			<i class="fas fa-info-circle  "></i>
 	                             					</a>
 									           </th>
@@ -67,42 +66,37 @@
 
                 </div>
                 <!-- /.container-fluid -->
-
+				<%@ include file="../modal/deleteModal.jsp" %>
+				
             </div>
 <script>
-function tableCreate(){
-	  param = JSON.stringify(param);
+function productAdd(){
+	openPopup("/user/productAdd", "productAdd", 1000, 700);
+}
 
-	    $.ajax({
-	        url : "/getProductList.do",
-	        data : param,
-	        type : 'post',
-	        success : function(data){
-	            var results = data.boardList;
-	            var str = '<TR>';
-	            $.each(results , function(i){
-	                str += 
-	                '<TD>' 
-	                + results[i].bdTitl + '</TD><TD>' 
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdWriter + '</TD><TD>'
-	                + results[i].bdRgDt + 
-	                '</TD>';
-	                str += '</TR>';
-	           });
-	           $("tableBody").append(str); 
-	        },
-	        error : function(){
-	            alert("error");
-	        }
-	    });	
+function productUpdate(p_id){
+	openPopup("/user/productUpdateView", "productUpdate", 1000, 700, {prdId: p_id});
+}
+
+function productDelete(p_id){
+	var param = new Object();
+	param.prdId      	   = p_id;
 	
-				
-	}
-
+	$("#deletModal").modal("show");
+	$("#delete").click(function(){
+		 $.ajax({
+		        url : "/user/productDelete",
+		        data : param,
+		        type : 'post',
+		        success : function(data){
+		        	location.reload();
+		        },
+		        error : function(){
+		            alert("error");
+		        }
+			 });
+		})
+	
+	
+}
 </script>
