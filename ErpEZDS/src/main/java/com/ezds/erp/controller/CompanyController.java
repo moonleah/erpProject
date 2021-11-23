@@ -31,7 +31,7 @@ public class CompanyController { //Z5 생산부품 회사
 	
 	@RequestMapping("/user/companyAdd")
 	public String companyAdd(@ModelAttribute CompanyVO companyVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return  "/company/company_Add";
+		return  "/company/company_insert";
 	}
 	
 	@RequestMapping("/user/companyInsert")
