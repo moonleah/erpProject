@@ -25,8 +25,20 @@ public class CompanyDAO {
 		return mapper.selectAll();
 	}
 
-	public void compnayInsert(CompanyVO companyVO) throws Exception {
-		mapper.compnayInsert(companyVO);
+	public void companyInsert(CompanyVO companyVO) throws Exception {
+		mapper.companyInsert(companyVO);
+	}
+
+	public void companyUpdate(CompanyVO companyVO) throws Exception {
+		mapper.companyUpdate(companyVO);
+	}
+
+	public void companyDelete(CompanyVO companyVO) throws Exception {
+		mapper.companyDelete(companyVO);
+	}
+
+	public CompanyVO getCompanyOne(CompanyVO companyVO) throws Exception {
+		return mapper.getCompanyOne(companyVO);
 	}
 
 

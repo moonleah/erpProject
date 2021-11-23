@@ -26,8 +26,24 @@ public class CompanyServiceImpl implements CompanyService{
 	}
 
 	@Override
-	public void compnayInsert(CompanyVO companyVO) throws Exception {
-		companyDao.compnayInsert(companyVO);		
+	public void companyInsert(CompanyVO companyVO) throws Exception {
+		companyDao.companyInsert(companyVO);		
+	}
+
+	@Override
+	public void companyUpdate(CompanyVO companyVO) throws Exception {
+		companyDao.companyUpdate(companyVO);
+	}
+
+	@Override
+	public void companyDelete(CompanyVO companyVO) throws Exception {
+		companyDao.companyDelete(companyVO);
+		
+	}
+
+	@Override
+	public CompanyVO getCompanyOne(CompanyVO companyVO) throws Exception {
+		return companyDao.getCompanyOne(companyVO);
 	}
 	
 	

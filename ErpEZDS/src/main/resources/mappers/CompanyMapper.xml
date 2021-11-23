@@ -4,20 +4,33 @@
 
 <mapper namespace="com.ezds.erp.mapper.CompanyMapper">
   		
-    <select id="selectCompany" resultType="String">
-  	SELECT company_name FROM prd_company
-	where company_id = 1
+    <select id="getCompanyOne" parameterType="CompanyVO" resultType="CompanyVO">
+  	SELECT * FROM prd_company
+	where company_id = #{companyId}
 	</select>
 	
 	<select id="selectAll" resultType="CompanyVO">
   	SELECT * FROM prd_company order by company_id ASC
 	</select>
 	
-	<insert id="compnayInsert" parameterType="CompanyVO">
+	<insert id="companyInsert" parameterType="CompanyVO">
   	INSERT INTO prd_company 
   				(company_name , company_type , company_tel , company_address) VALUES 
   				(#{companyName} , #{companyType} , #{companyTel} , #{companyAddress})
 	</insert>
+	
+	<update id="companyUpdate" parameterType="CompanyVO">
+	UPDATE prd_company SET 
+		 					company_name = #{companyName},
+		 					company_type = #{companyType},
+		 					company_tel  = #{companyTel},
+		 					company_Address = #{companyAddress}
+					 WHERE  company_id = #{companyId}
+	</update>
+	
+	<delete id="companyDelete" parameterType="CompanyVO">
+	DELETE FROM prd_company WHERE  company_id = #{companyId}
+	</delete>
   
 
 </mapper>

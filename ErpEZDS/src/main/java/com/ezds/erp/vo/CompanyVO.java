@@ -8,17 +8,17 @@ public class CompanyVO {
 		return "CompanyVO [companyId=" + companyId + ", companyName=" + companyName + ", companyType=" + companyType
 				+ ", companyTel=" + companyTel + ", companyAddress=" + companyAddress + "]";
 	}
-	private int companyId;
+	private Integer companyId;
 	private String companyName;
-	private int companyType;
+	private Integer companyType;
 	private String companyTel;
 	private String companyAddress;
 	
 
-	public int getCompanyId() {
+	public Integer getCompanyId() {
 		return companyId;
 	}
-	public void setCompanyId(int companyId) {
+	public void setCompanyId(Integer companyId) {
 		this.companyId = companyId;
 	}
 	public String getCompanyName() {
@@ -27,10 +27,10 @@ public class CompanyVO {
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
-	public int getCompanyType() {
+	public Integer getCompanyType() {
 		return companyType;
 	}
-	public void setCompanyType(int companyType) {
+	public void setCompanyType(Integer companyType) {
 		this.companyType = companyType;
 	}
 	public String getCompanyTel() {

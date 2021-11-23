@@ -37,7 +37,26 @@ public class CompanyController { //Z5 생산부품 회사
 	@RequestMapping("/user/companyInsert")
 	@ResponseBody
 	public void companyInsert(@ModelAttribute CompanyVO companyVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		service.compnayInsert(companyVO);
+		service.companyInsert(companyVO);
+	}
+	
+	@RequestMapping("/user/companyUpdateView")
+	public String companyUpdateView(@ModelAttribute CompanyVO companyVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		CompanyVO getCompanyOne =  service.getCompanyOne(companyVO);
+		model.addAttribute("company",  getCompanyOne);
+		return  "/company/company_update";
+	}
+	
+	@RequestMapping("/user/companyUpdate")
+	@ResponseBody
+	public void companyUpdate(@ModelAttribute CompanyVO companyVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		service.companyUpdate(companyVO);
+	}
+	
+	@RequestMapping("/user/companyDelete")
+	@ResponseBody
+	public void companyDelete(@ModelAttribute CompanyVO companyVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		service.companyDelete(companyVO);
 	}
 
 }

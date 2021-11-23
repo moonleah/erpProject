@@ -78,24 +78,13 @@ function checkAll(bx) {
 	}
 
 function companyAdd(){
-	openPopup("/user/companyAdd", "openProductSaleDetail", 1000, 700);
+	openPopup("/user/companyAdd", "companyAdd", 1000, 700);
 }
 
 function companyUpdate(p_id){
 	var param = new Object();
 	param.companyId      	   = p_id;
-	
-	 $.ajax({
-	        url : "/user/companyUpdate",
-	        data : param,
-	        type : 'post',
-	        success : function(data){
-	        	alert("수정 완료")
-	        },
-	        error : function(){
-	            alert("error");
-	        }
-	 });
+	openPopup("/user/companyUpdateView", "companyUpdate", 1000, 700, {companyId: p_id});
 }
 
 function companyDelete(p_id){
@@ -107,7 +96,8 @@ function companyDelete(p_id){
 	        data : param,
 	        type : 'post',
 	        success : function(data){
-	        	alert("삭제 완료")
+	        	location.reload();
+	        	alert("delete success");
 	        },
 	        error : function(){
 	            alert("error");

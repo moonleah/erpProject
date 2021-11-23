@@ -13,6 +13,9 @@ public interface CompanyMapper {
 
 	public String selectCompany() throws Exception;
 	public List<CompanyVO> selectAll() throws Exception;
-	public void compnayInsert(CompanyVO companyVO) throws Exception;
+	public void companyInsert(CompanyVO companyVO) throws Exception;
+	public void companyUpdate(CompanyVO companyVO) throws Exception;
+	public void companyDelete(CompanyVO companyVO) throws Exception;
+	public CompanyVO getCompanyOne(CompanyVO companyVO) throws Exception;
 
 }
