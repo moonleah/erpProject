@@ -25,22 +25,21 @@
                                             <th>발주날짜</th>
                                             <th>입고날짜</th>
                                             <th>회사</th>
-                                            <th>비고</th>
-                                            
+                                            <th>비고</th>                                      
                                         </tr>
                                     </thead>
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${getIncomList}" varStatus="status">
 									         <tr onclick = "IncomDetail(${result.icmId},${result.prdNo})">
-									           <th >${status.count}</th>
-									           <th  >${result.prdNo}</th>
-									           <th  >${result.prdSpec}</th>
-									           <th  >${result.icmQty}</th>
-									           <th  >${result.icmPrice}</th>
-									           <th  >${result.icmOrderDate}</th>
-									           <th  >${result.icmDate}</th>
-									           <th  >${result.icmCompanyName}</th>
-									           <th  >${result.icmComment}</th>
+									           <td >${status.count}</td>
+									           <td  >${result.prdNo}</td>
+									           <td  >${result.prdSpec}</td>
+									           <td  >${result.icmQty}</td>
+									           <td  >${result.icmPrice}</td>
+									           <td  >${result.icmOrderDate}</td>
+									           <td  >${result.icmDate}</td>
+									           <td  >${result.icmCompanyName}</td>
+									           <td  >${result.icmComment}</td>
 									          </tr>
 										  </c:forEach>  
                                     </tbody>

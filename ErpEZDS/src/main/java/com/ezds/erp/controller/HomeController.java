@@ -22,7 +22,7 @@ public class HomeController {
 		return "index"; //로그인정보가 있을 경우 
 		}
 		
-		return "main"; //로그인 페이지 
+		return "redirect:/loginForm"; //로그인 페이지 
 	}
 
 }

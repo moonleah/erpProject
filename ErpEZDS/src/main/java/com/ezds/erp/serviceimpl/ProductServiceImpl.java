@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.ezds.erp.dao.ProductDAO;
 import com.ezds.erp.service.ProductService;
 import com.ezds.erp.vo.ProductVO;
+import com.ezds.erp.vo.SubSpecVO;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -53,6 +54,21 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<ProductVO> getSubCateList() throws Exception {
 		return productDao.getSubCateList();
+	}
+
+	@Override
+	public List<SubSpecVO> getSubSpecList(Integer prdNo) throws Exception {
+		return productDao.getSubSpecList(prdNo);
+	}
+
+	@Override
+	public void productSpecInsert(SubSpecVO subSpecVO) throws Exception {
+		  productDao.productSpecInsert(subSpecVO);		
+	}
+
+	@Override
+	public void productSpecDelete(SubSpecVO subSpecVO) throws Exception {
+		 productDao.productSpecDelete(subSpecVO);		
 	}
 
 

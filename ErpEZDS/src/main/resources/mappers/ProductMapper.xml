@@ -41,14 +41,14 @@
 		SELECT * FROM   prd_part_sub_category 
    </select>
  
-   <insert id="productInsert" parameterType="CompanyVO">
+   <insert id="productInsert" parameterType="ProductVO">
   	INSERT INTO prd_product_manage 
 					   (cate_id,sub_cate_id, prd_no , prd_desc, prd_spec , prd_tol, prd_temp , prd_type , prd_qty, prd_moq, prd_maker) 
   				VALUES 
   				(#{cateId}, #{subCateId}, #{prdNo}, #{prdDesc}, #{prdSpec}, #{prdTol}, #{prdTemp}, #{prdType}, #{prdQty}, #{prdMoq}, #{prdMaker})
 	</insert>
 	
-	<update id="productUpdate" parameterType="CompanyVO">
+	<update id="productUpdate" parameterType="ProductVO">
 	UPDATE prd_product_manage SET 
 							cate_id 		= #{cateId},
 							sub_cate_id 	= #{subCateId},
@@ -64,10 +64,24 @@
 					 WHERE  prd_id = #{prdId}
 	</update>
 	
-	<delete id="productDelete" parameterType="CompanyVO">
+	<delete id="productDelete" parameterType="ProductVO">
 	DELETE FROM prd_product_manage WHERE  prd_id = #{prdId}
 	</delete>
   
+  	<select id="getSubSpecList" parameterType="Integer" resultType="SubSpecVO">
+		SELECT * FROM   prd_product_sub_spec  
+		where 			sub_spec_prd_no = #{prdNo} 
+    </select>
   
+  	<insert id="productSpecInsert" parameterType="SubSpecVO">
+  	INSERT INTO prd_product_sub_spec 
+					    (sub_spec_prd_no , sub_spec_maker , sub_spec_name ) 
+  				VALUES 
+  						(#{subSpecPrdNo}, #{subSpecMaker}, #{subSpecName})
+	</insert>
+	
+	<delete id="productSpecDelete" parameterType="SubSpecVO">
+	DELETE FROM prd_product_sub_spec WHERE  sub_spec_id = #{subSpecId}
+	</delete>
 
 </mapper>

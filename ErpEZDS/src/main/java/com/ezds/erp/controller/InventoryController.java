@@ -20,7 +20,11 @@ import com.ezds.erp.vo.InventoryVO;
 import com.ezds.erp.vo.OutgoVO;
 import com.ezds.erp.vo.ProductVO;
 
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 public class InventoryController { //Z5 생산 부품 입출고
 	
 	@Autowired
@@ -37,7 +41,6 @@ public class InventoryController { //Z5 생산 부품 입출고
 		List<InventoryVO> list = ivtService.getIvtList(inventoryVO);
 		System.out.println(list.toString());
 		model.addAttribute("getIvtList",  list);
-		
 		return  "/inventory/ivt_main";
 	}
 	
@@ -48,16 +51,16 @@ public class InventoryController { //Z5 생산 부품 입출고
 	}
 	
 	@RequestMapping("/user/ivtDetail")
-	//@ResponseBody
 	public String ivtDetail(@ModelAttribute InventoryVO inventoryVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		Integer prdNo = inventoryVO.getPrdNo();
 		ProductVO prdInfo = prdService.getPrdDetail(prdNo);
+		prdInfo.setIvtTotal(inventoryVO.getIvtTotal());
 		List<IncomVO> getIcmDetailList = icmService.getIcmDetailList(prdNo);
-		//List<OutgoVO> getOutDetailList = outService.getIcmDetailList(prdNo);
+		List<OutgoVO> getOutDetailList = outService.getOutDetailList(prdNo);
 		model.addAttribute("prdInfo",  prdInfo);
 		model.addAttribute("getIncomList",  getIcmDetailList);
-	//	model.addAttribute("getOutgoList",  getOutDetailList);
+		model.addAttribute("getOutgoList",  getOutDetailList);
 		
 		return  "/inventory/ivt_modal";
 	}

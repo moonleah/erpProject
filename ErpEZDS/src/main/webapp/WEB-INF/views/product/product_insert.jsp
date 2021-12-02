@@ -77,8 +77,12 @@
 				</div>
 		  </div>
 	 	  
-	   
 	 </div>
+			
+			
+			
+			
+			
 			
 		 <div class="w3-row es_center es_padding_30">
 	            <button type="button" class="btn btn-primary" onclick="productInsert()" >Add</button>
@@ -112,21 +116,22 @@ function productInsert(){
 	param.subCateId      	= selectOpt2;
 	
 	console.log(param);
-	
-	 $.ajax({
-	        url : "/user/productInsert",
-	        data : param,
-	        type : 'post',
-	        success : function(data){
-	        	opener.parent.location.reload();
-	        	window.close();
-	        	alert("product insert success");
-	        },
-	        error : function(){
-	            alert("error");
-	        }
-	 });
-	 
+	var insertConfirm = confirm('Are you sure??? ')
+	if(insertConfirm){
+		 $.ajax({
+		        url : "/user/productInsert",
+		        data : param,
+		        type : 'post',
+		        success : function(data){
+		        	opener.parent.location.reload();
+		        	window.close();
+		        	alert("product insert success");
+		        },
+		        error : function(){
+		            alert("error");
+		        }
+		 })
+	}
 	
 }
 

@@ -20,7 +20,7 @@
 	    <div class="w3-row content es_padding_20">  
 	      <div class="es_border es_border_gray es_padding_16">       
 	            <div class="w3-row es_row">
-	       			<div class="w3-col l12  m12  s12  es_size_16 es_text_lineheight_30 es_padding_10">PRODUCT ADD</div>
+	       			<div class="w3-col l12  m12  s12  es_size_16 es_text_lineheight_30 es_padding_10">PRODUCT UPDATE</div>
 	            </div>
 	
 				<div class="w3-row">  
@@ -74,20 +74,65 @@
 				<div class="w3-row">  
 					<div class="w3-col l2  m6  s12 es_label">MOQ</div> 
 					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdMoq"  name="prdMoq"  value="${product.prdMoq}"></div>
+					<div class="w3-col l2  m6  s12 es_label">SUB SPEC' ADD</div> 
+					<div class="w3-col l4  m6  s12"> 
+							<a href="#" data-toggle="modal" data-target="#specAdd" class="btn btn-success btn-circle btn-sm " style="margin-top:0.5em;">
+	                                      <i class="fas fa-plus "></i>
+	                        </a>
+	                </div>
 				</div>
 		  </div>
-	 	  
-	   
-	 </div>
-			
-		 <div class="w3-row es_center es_padding_30">
+		  	<div class="w3-row es_center es_padding_30">
 	            <button type="button" class="btn btn-primary" onclick="productUpdate()" >Update</button>
 	            <button type="button" class="btn btn-secondary" onclick="javascript: self.close();" >Close</button>
+			 </div>
+	 </div> 
+</div>
+
+	<c:if test="${fn:length(subSpecList) > 0}">
+
+		 <div class="card-body">
+		 <div class="w3-row content es_padding_20">  
+            <div class="w3-row es_row">
+     			<div class="w3-col l12  m12  s12  es_size_16 es_text_lineheight_30 es_padding_10">PRODUCT SUBSPEC LIST</div>
+          	</div>
+				            <div class="table-responsive">
+                                <table class="table table-bordered" id="subSpecList" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                        	<th>PART NO</th>
+                                        	<th>SUB SPEC'</th>
+                                            <th>MAKER</th>
+                                            <th>Setting<i class="fas fa-fw fa-cog"></i></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id = "tableBody">
+                                           <c:forEach var="result" items="${subSpecList}" varStatus="status"> 
+									         <tr>
+									          <td>${result.subSpecPrdNo}</td>
+									          <td>${result.subSpecMaker}</td>
+									          <td>${result.subSpecName}</td>
+									          <td>
+										            <a href="#"   onclick="deleteSubSpec(${result.subSpecId})"  class="btn btn-danger btn-circle btn-sm fa-pull-right">
+						                                        <i class="fas fa-trash "></i>
+						                            </a>
+									           </td>
+									          </tr>
+										  </c:forEach>   
+                                    </tbody>
+                                </table>
+                            </div>
+                 </div>
 		 </div>
-	
-	</div>	
+		 </c:if>
+		 
+		<%@ include file="modal/specUpdateModal.jsp" %>
 
 <script>
+/* $(document).ready(function() {
+ $('#subSpecList').DataTable();
+}); 
+ */
 
 
 function productUpdate(){
@@ -113,25 +158,51 @@ function productUpdate(){
 	param.subCateId      	= selectOpt2;
 	
 	console.log(param);
-	
-	 $.ajax({
-	        url : "/user/productUpdate",
-	        data : param,
-	        type : 'post',
-	        success : function(data){
-	        	opener.parent.location.reload();
-	        	window.close();
-	        	alert("product update success");
-	        },
-	        error : function(){
-	            alert("error");
-	        }
-	 });
+	var udtConfirm = confirm('Are you sure??? ')
+	if(udtConfirm){
+		 $.ajax({
+		        url : "/user/productUpdate",
+		        data : param,
+		        type : 'post',
+		        success : function(data){
+		        	opener.parent.location.reload();
+		        	window.close();
+		        	alert("product update success");
+		        },
+		        error : function(){
+		            alert("error");
+		        }
+		 })
+	}
 	 
 	
 }
 
+function deleteSubSpec(p_id) { 
+	var param = new Object();
+	param.subSpecId      	   = p_id;
+	
+	var delConfirm = confirm('Are you sure??? ')
+	if(delConfirm){
+		$.ajax({
+		        url : "/user/deleteSubSpec",
+		        data : param,
+		        type : 'post',
+		        success : function(data){
+		        	location.reload();
+		        	alert("delete success");
+		        },
+		        error : function(){
+		            alert("error");
+		        }
+		 })
+	}	 
+	
 
+}
+ 
+ 
+ 
 </script>
 </body>
 </html>    

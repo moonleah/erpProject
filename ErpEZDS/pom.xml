@@ -55,6 +55,18 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
+		
+		<!-- Excel 설정 -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>4.1.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>4.1.2</version>
+		</dependency>
 				
 				<!-- DB 설정 -->
 		<dependency>
@@ -66,27 +78,35 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		
+		<dependency> 
+			<groupId>org.bgee.log4jdbc-log4j2</groupId> 
+			<artifactId>log4jdbc-log4j2-jdbc4.1</artifactId> 
+			<version>1.16</version> 
+	    </dependency>
+		
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.3.0</version>
 		</dependency>
-		<dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-starter-test</artifactId>
-	    <scope>test</scope>
-	</dependency>
-	<dependency>
-	    <groupId>org.projectlombok</groupId>
-	    <artifactId>lombok</artifactId>
-	    <optional>true</optional>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
-	<dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-starter-security</artifactId>
-	</dependency>
 	
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-test</artifactId>
+		    <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <optional>true</optional>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
  		<dependency>
 		  <groupId>org.springframework.security</groupId>
 		  <artifactId>spring-security-taglibs</artifactId>

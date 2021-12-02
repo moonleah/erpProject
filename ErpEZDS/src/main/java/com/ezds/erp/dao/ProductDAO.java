@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.ezds.erp.mapper.ProductMapper;
 import com.ezds.erp.vo.ProductVO;
+import com.ezds.erp.vo.SubSpecVO;
 
 @Component
 
@@ -40,6 +41,15 @@ public class ProductDAO {
 	}
 	public List<ProductVO> getSubCateList() throws Exception {
 		return 	mapper.getSubCateList();
+	}
+	public List<SubSpecVO> getSubSpecList(Integer prdNo) throws Exception {
+		return mapper.getSubSpecList(prdNo);
+	}
+	public void productSpecInsert(SubSpecVO subSpecVO) throws Exception {
+			mapper.productSpecInsert(subSpecVO);		
+	}
+	public void productSpecDelete(SubSpecVO subSpecVO) throws Exception {
+			mapper.productSpecDelete(subSpecVO);			
 	}
 
 

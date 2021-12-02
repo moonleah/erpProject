@@ -13,4 +13,6 @@ import com.ezds.erp.vo.UserVO;
 @Mapper
 public interface OutgoMapper {
 	List<OutgoVO> getOutgoList()  throws Exception;
+
+	List<OutgoVO> getOutDetailList(Integer prdNo) throws Exception;
 }

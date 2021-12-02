@@ -10,10 +10,11 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Z5 생산 부품 목록</h6>
-                             <a href="#" onclick="productAdd()" class="btn btn-success btn-circle btn-sm fa-pull-right">
-                                        <i class="fas fa-plus "></i>
-                             </a>
+                            <h6 class="m-0 font-weight-bold text-primary">Z5 생산 부품 목록
+	                             <a href="#" onclick="productAdd()" class="btn btn-success btn-circle btn-sm fa-pull-right">
+	                                        <i class="fas fa-plus "></i>
+	                             </a>
+                             </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -37,25 +38,25 @@
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${getProductList}" varStatus="status">
 									         <tr>
-									           <th value="${result.prdNo}" >${result.prdNo}</th>
-									           <th value="${result.prdSpec}" >${result.prdSpec}</th>
-									           <th value="${result.cateName}" >${result.cateName}</th>
-									           <th value="${result.subCateName}" >${result.subCateName}</th>
-									           <th value="${result.prdDesc}" >${result.prdDesc}</th>
-									           <th value="${result.prdType}" >${result.prdType}</th>
-									           <th value="${result.prdTemp}" >${result.prdTemp}</th>
-									           <th value="${result.prdMaker}" >${result.prdMaker}</th>
-									           <th value="${result.prdTol}" >${result.prdTol}</th>
-									           <th value="${result.prdQty}" >${result.prdQty}</th>
-									           <th value="${result.prdMoq}" >${result.prdMoq}</th>
-									           <th><!-- data-toggle="modal" data-target="#my-modal" --> 
+									           <td value="${result.prdNo}" >${result.prdNo}</td>
+									           <td value="${result.prdNo}" >${result.prdSpec}</td>
+									           <td value="${result.cateName}" >${result.cateName}</td>
+									           <td value="${result.subCateName}" >${result.subCateName}</td>
+									           <td value="${result.prdDesc}" >${result.prdDesc}</td>
+									           <td value="${result.prdType}" >${result.prdType}</td>
+									           <td value="${result.prdTemp}" >${result.prdTemp}</td>
+									           <td value="${result.prdMaker}" >${result.prdMaker}</td>
+									           <td value="${result.prdTol}" >${result.prdTol}</td>
+									           <td value="${result.prdQty}" >${result.prdQty}</td>
+									           <td value="${result.prdMoq}" >${result.prdMoq}</td>
+									           <td><!-- data-toggle="modal" data-target="#my-modal" --> 
 										            <a href="#"   onclick="productDelete(${result.prdId})"  class="btn btn-danger btn-circle btn-sm fa-pull-right">
 						                                        <i class="fas fa-trash "></i>
 						                            </a>
 										            <a href="#" onclick="productUpdate(${result.prdId})" class="btn btn-info btn-circle btn-sm fa-pull-right" style = 'margin-right:3px;'>
 	                                        			<i class="fas fa-info-circle  "></i>
 	                             					</a>
-									           </th>
+									           </td>
 									          </tr>
 										  </c:forEach>  
                                     </tbody>

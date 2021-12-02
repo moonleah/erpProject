@@ -21,6 +21,11 @@ public class OutgoServiceImpl implements OutgoService{
 		return outDao.getOutgoList();
 	}
 
+	@Override
+	public List<OutgoVO> getOutDetailList(Integer prdNo) throws Exception {
+		return outDao.getOutDetailList(prdNo);
+	}
+
 	
 
 	

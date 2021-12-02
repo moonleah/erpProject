@@ -17,8 +17,12 @@ public class OutgoDAO {
 
 
 	public List<OutgoVO> getOutgoList()  throws Exception{
-		// TODO Auto-generated method stub
 		return mapper.getOutgoList();
+	}
+
+
+	public List<OutgoVO> getOutDetailList(Integer prdNo)  throws Exception{
+		return mapper.getOutDetailList(prdNo);
 	}
 	
 

@@ -14,8 +14,8 @@
             ORDER BY    A.out_date DESC
     </select>
     
-    <select id="getoutDetailList" parameterType="Integer" resultType="OutgoVO">
-			SELECT 		A.out_id, A.prd_id , B.prd_no , B.prd_spec , A.out_qty ,
+    <select id="getOutDetailList" parameterType="Integer" resultType="OutgoVO">
+			SELECT 		A.out_id, B.prd_no , B.prd_spec , A.out_qty ,
 			       		A.out_price, A.out_comment ,DATE_FORMAT(A.out_date ,   '%Y-%m-%d') as out_date , A.out_company_name
 			FROM   		prd_outgoing_manage A 
 			LEFT JOIN 	prd_product_manage B 

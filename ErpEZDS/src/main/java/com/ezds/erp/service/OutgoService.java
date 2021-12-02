@@ -9,6 +9,8 @@ import com.ezds.erp.vo.UserVO;
 public interface OutgoService {
 
 	List<OutgoVO> getOutgoList() throws Exception;
+
+	List<OutgoVO> getOutDetailList(Integer prdNo) throws Exception;
 	
 	
 }

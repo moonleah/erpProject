@@ -7,7 +7,7 @@ public class ProductVO {
 	private Integer subCateId;
 	private Integer prdQty;
 	private Integer prdMoq;
-	private String prdNo;
+	private Integer prdNo;
 	private String prdDesc;
 	private String prdSpec;
 	private String prdTol;
@@ -18,7 +18,7 @@ public class ProductVO {
 	
 	private String cateName;
 	private String subCateName;
-
+	private Integer ivtTotal;
 	
 	public Integer getPrdId() {
 		return prdId;
@@ -38,10 +38,10 @@ public class ProductVO {
 	public void setSubCateId(Integer subCateId) {
 		this.subCateId = subCateId;
 	}
-	public String getPrdNo() {
+	public Integer getPrdNo() {
 		return prdNo;
 	}
-	public void setPrdNo(String prdNo) {
+	public void setPrdNo(Integer prdNo) {
 		this.prdNo = prdNo;
 	}
 	public String getPrdDesc() {
@@ -109,6 +109,12 @@ public class ProductVO {
 	}
 	public void setPrdMoq(Integer prdMoq) {
 		this.prdMoq = prdMoq;
+	}
+	public Integer getIvtTotal() {
+		return ivtTotal;
+	}
+	public void setIvtTotal(Integer ivtTotal) {
+		this.ivtTotal = ivtTotal;
 	}
 	
 	

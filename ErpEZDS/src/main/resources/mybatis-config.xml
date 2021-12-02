@@ -15,6 +15,7 @@
    			<typeAlias type="com.ezds.erp.vo.IncomVO" alias="IncomVO"/>
    			<typeAlias type="com.ezds.erp.vo.InventoryVO" alias="InventoryVO"/>
    			<typeAlias type="com.ezds.erp.vo.OutgoVO" alias="OutgoVO"/>
+   			<typeAlias type="com.ezds.erp.vo.SubSpecVO" alias="SubSpecVO"/>
 	</typeAliases>
 	
 </configuration>

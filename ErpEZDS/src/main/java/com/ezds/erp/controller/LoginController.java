@@ -58,22 +58,16 @@ public class LoginController {
     
     @RequestMapping(value="/regist")
     public String regist(HttpSession session, UserVO userVO) throws Exception{
-    	
-    System.out.println("회원가입" + userVO);
-    
-    String rawPwd = userVO.getUserPw(); 
-    String encPwd = encodePwd.encode(rawPwd);
-    userVO.setUserPw(encPwd);
-    
-    System.out.println("회원가입 성공" + encPwd );
-    
-    userService.insertUser(userVO);
-  
-    	return "redirect:/loginForm"; // 로그인 폼으로 다시 가도록 함
+		String rawPwd = userVO.getUserPw(); 
+	    String encPwd = encodePwd.encode(rawPwd);
+	    userVO.setUserPw(encPwd);
+	    
+	    userService.insertUser(userVO);
+	  
+	   	return "redirect:/loginForm"; // 로그인 폼으로 다시 가도록 함
     }
     // 로그아웃 하는 부분
    
-    
     
     @Secured("ROLE_ADMIN") //간단하게 롤 추가 
     @RequestMapping(value="/info")

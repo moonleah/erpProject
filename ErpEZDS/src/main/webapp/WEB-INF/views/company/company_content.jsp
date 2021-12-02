@@ -10,11 +10,11 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Z5 부품 거래처 목록</h6>
-                             <a href="#" onClick = "companyAdd()" class="btn btn-success btn-circle btn-sm fa-pull-right">
-                                        <i class="fas fa-plus "></i>
-                             </a>
-                            
+                            <h6 class="m-0 font-weight-bold text-primary">Z5 부품 거래처 목록
+	                             <a href="#" onClick = "companyAdd()" class="btn btn-success btn-circle btn-sm fa-pull-right">
+	                                        <i class="fas fa-plus "></i>
+	                             </a>
+                            </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -34,19 +34,19 @@
                                           <c:forEach var="result" items="${selectList}" varStatus="status">
 									         <tr>
 									           <!-- <th><input type="checkbox" name=""></th> -->
-									           <th >${status.count}</th>
-									           <th >${result.companyName}</th>
-									           <th >${result.companyType}</th>
-									           <th >${result.companyAddress}</th>
-									           <th >${result.companyTel}</th>
-									           <th>
-									            <a href="#" onClick = "companyDelete(${result.companyId})" class="btn btn-danger btn-circle btn-sm fa-pull-right">
-					                                        <i class="fas fa-trash "></i>
-					                            </a>
-									            <a href="#" onClick = "companyUpdate(${result.companyId})" class="btn btn-info btn-circle btn-sm fa-pull-right" style = 'margin-right:3px;'>
-                                        			<i class="fas fa-info-circle  "></i>
-                             					</a>
-									           </th>
+									           <td >${status.count}</td>
+									           <td >${result.companyName}</td>
+									           <td >${result.companyType}</td>
+									           <td >${result.companyAddress}</td>
+									           <td >${result.companyTel}</td>
+									           <td>
+										            <a href="#" onClick = "companyDelete(${result.companyId})" class="btn btn-danger btn-circle btn-sm fa-pull-right">
+						                                        <i class="fas fa-trash "></i>
+						                            </a>
+										            <a href="#" onClick = "companyUpdate(${result.companyId})" class="btn btn-info btn-circle btn-sm fa-pull-right" style = 'margin-right:3px;'>
+	                                        			<i class="fas fa-info-circle  "></i>
+	                             					</a>
+									           </td>
 									           
 									         </tr>
 										  </c:forEach>  

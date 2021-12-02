@@ -1,5 +1,6 @@
 package com.ezds.erp.controller;
 
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.ezds.erp.service.CompanyService;
 import com.ezds.erp.vo.CompanyVO;
 
+
 @Controller
 public class CompanyController { //Z5 생산부품 회사 
 	
@@ -24,7 +26,6 @@ public class CompanyController { //Z5 생산부품 회사
 	@RequestMapping("/user/company")
 	public String getCompany(@ModelAttribute CompanyVO companyVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<CompanyVO> list = service.selectList();
-		System.out.println(list.toString());
 		model.addAttribute("selectList",  list);
 		return  "/company/company_main";
 	}
@@ -57,6 +58,13 @@ public class CompanyController { //Z5 생산부품 회사
 	@ResponseBody
 	public void companyDelete(@ModelAttribute CompanyVO companyVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		service.companyDelete(companyVO);
+	}
+	
+	@RequestMapping("/user/getCompanyList")
+	@ResponseBody
+	public List<CompanyVO> getCompanyList(@ModelAttribute CompanyVO companyVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		List<CompanyVO> list = service.selectList();
+		return list; 
 	}
 
 }

@@ -32,14 +32,14 @@
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${getOutgoList}" varStatus="status">
 									         <tr onclick = "outgoDetail(${result.outId},${result.prdNo})">
-									           <th  >${status.count}</th>
-									           <th  >${result.prdNo}</th>
-									           <th  >${result.prdSpec}</th>
-									           <th  >${result.outQty}</th>
-									           <th  >${result.outPrice}</th>
-									           <th  >${result.outDate}</th>
-									           <th  >${result.outCompanyName}</th>
-									           <th  >${result.outComment}</th>
+									           <td  >${status.count}</td>
+									           <td  >${result.prdNo}</td>
+									           <td  >${result.prdSpec}</td>
+									           <td  >${result.outQty}</td>
+									           <td  >${result.outPrice}</td>
+									           <td  >${result.outDate}</td>
+									           <td  >${result.outCompanyName}</td>
+									           <td  >${result.outComment}</td>
 									          </tr>
 										  </c:forEach>  
                                     </tbody>

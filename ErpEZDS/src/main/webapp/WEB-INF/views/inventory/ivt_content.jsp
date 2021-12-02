@@ -8,7 +8,10 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Z5 생산부품 재고 리스트</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Z5 생산부품 재고 리스트
+                            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm fa-pull-right">
+                      		  <i class="fas fa-download fa-sm text-white-50"></i> Excel</a> -->
+                            </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -28,15 +31,15 @@
                                     </thead>
                                     <tbody id = "tableBody">
                                           <c:forEach var="result" items="${getIvtList}" varStatus="status">
-									         <tr onclick = "openIvtDetail(${result.prdNo})" style="cursor: pointer;">
-									           <th  >${result.prdNo}</th>
-									           <th  >${result.prdSpec}</th>
-									           <th  >${result.cateName}</th>
-									           <th  >${result.icmSumQty}</th>
-									           <th  >${result.outSumQty}</th>
-									           <th  >${result.ivtTotal}</th>
-									           <th  >${result.prdQty}</th>
-									           <th  >${result.avlPrdQty}</th>
+									         <tr onclick = "openIvtDetail(${result.prdNo},${result.ivtTotal})" style="cursor: pointer;">
+									           <td  >${result.prdNo}</td>
+									           <td  >${result.prdSpec}</td>
+									           <td  >${result.cateName}</td>
+									           <td  >${result.icmSumQty}</td>
+									           <td  >${result.outSumQty}</td>
+									           <td  >${result.ivtTotal}</td>
+									           <td  >${result.prdQty}</td>
+									           <td  >${result.avlPrdQty}</td>
 									         </tr>
 										  </c:forEach>  
                                     </tbody>
@@ -52,8 +55,8 @@ $(document).ready(function() {
 	   $('#ivtTable').DataTable();
 	});
 
-function openIvtDetail(p_prdNo){
-	openPopup("/user/ivtDetail", "openProductSaleDetail", 1000, 700, {prdNo: parseInt(p_prdNo) });
+function openIvtDetail(p_prdNo , p_ivtTotal){
+	openPopup("/user/ivtDetail", "openProductSaleDetail", 1000, 700, {prdNo: parseInt(p_prdNo) , ivtTotal: p_ivtTotal });
 }
 
 

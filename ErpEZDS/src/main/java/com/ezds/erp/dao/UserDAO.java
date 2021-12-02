@@ -9,7 +9,7 @@ import com.ezds.erp.mapper.UserMapper;
 import com.ezds.erp.vo.UserVO;
 
 @Component
-public class UserDAO  {
+public class UserDAO {
 	
 	@Autowired
 	private UserMapper mapper;

@@ -53,9 +53,9 @@
 		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.prdMaker}</div>
 		                         
 		                         <div class="w3-col l2   m2   s12    es_cell_th">Product MOQ</div>
-		                         <div class="w3-col l10   m10   s12    es_cell_td">${prdInfo.prdMoq}</div>
-		                       <%--   <div class="w3-col l2   m2   s12    es_cell_th">Product Moq</div>
-		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.prdMoq}</div> --%>
+		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.prdMoq}</div>
+		                         <div class="w3-col l2   m2   s12    es_cell_th">Inventory Total</div>
+		                         <div class="w3-col l4   m4   s12    es_cell_td">${prdInfo.ivtTotal}</div>
 		                         
 		                         
 		                     </div>
@@ -65,12 +65,12 @@
 	</div>
 	 <div class="card shadow">
               <!-- Card Header - Accordion -->
-                <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
-                    role="button" aria-expanded="false" aria-controls="collapseCardExample">
+                <a href="#icmList" class="d-block card-header py-3" data-toggle="collapse"
+                    role="button" aria-expanded="false" aria-controls="icmList">
                     <h6 class="m-0 font-weight-bold text-primary">입고리스트</h6>
                 </a>
                 <!-- Card Content - Collapse -->
-                <div class="collapse" id="collapseCardExample">
+                <div class="collapse" id="icmList">
                    <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="icmTable" width="100%" cellspacing="0">
@@ -88,18 +88,31 @@
                                         </tr>
                                     </thead>
                                     <tbody id = "tableBody">
+                                    <c:set var = "sum" value = "0" />
+                                    <c:set var = "sumPrice" value = "0" />
 									       <c:forEach var="result" items="${getIncomList}" varStatus="status">
 									         <tr >
 									          <%--  <th  >${result.icmId}</th> --%>
-									           <th  >${result.prdNo}</th>
-									           <th  >${result.icmQty}</th>
-									           <th  >${result.icmPrice}</th>
-									           <th  >${result.icmOrderDate}</th>
-									           <th  >${result.icmDate}</th>
-									           <th  >${result.icmCompanyName}</th>
-									           <th  >${result.icmComment}</th>
+									           <td  >${result.prdNo}</td>
+									           <td  >${result.icmQty}</td>
+									           <td  >${result.icmPrice}</td>
+									           <td  >${result.icmOrderDate}</td>
+									           <td  >${result.icmDate}</td>
+									           <td  >${result.icmCompanyName}</td>
+									           <td  >${result.icmComment}</td>
 									          </tr>
+									          <c:set var= "sum" value="${sum + result.icmQty}"/>
+									          <c:set var= "sumPrice" value="${sumPrice + result.icmPrice}"/>
 										  </c:forEach>  
+										      <tr>
+												<td  >합계</td>
+									           	<td> <c:out value="${sum}"/> </td>
+									           	<td> <c:out value="${sumPrice}"/> </td>
+									           	<td  ></td>
+									           	<td  ></td>
+									           	<td  ></td>
+									           	<td  ></td>
+		   									  </tr> 
                                     </tbody>
                                 </table>
                             </div>
@@ -109,12 +122,12 @@
             
             <div class="card shadow">
               <!-- Card Header - Accordion -->
-                <a href="#outdoingList" class="d-block card-header py-3" data-toggle="collapse"
-                    role="button" aria-expanded="false" aria-controls="outdoingList">
+                <a href="#outgoingList" class="d-block card-header py-3" data-toggle="collapse"
+                    role="button" aria-expanded="false" aria-controls="outgoingList">
                     <h6 class="m-0 font-weight-bold text-primary">출고리스트</h6>
                 </a>
                 <!-- Card Content - Collapse -->
-                <div class="collapse" id="outdoingList">
+                <div class="collapse" id="outgoingList">
                    <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="outTable" width="100%" cellspacing="0">
@@ -131,17 +144,28 @@
                                         </tr>
                                     </thead>
                                     <tbody id = "tableBody">
-									      <c:forEach var="result" items="${getIncomList}" varStatus="status">
+                                    	 <c:set var = "sum" value = "0" />
+                                    	 <c:set var = "sumPrice" value = "0" />
+									      <c:forEach var="result" items="${getOutgoList}" varStatus="status">
 									         <tr >
-									           <th  >${result.prdNo}</th>
-									           <th  >${result.icmQty}</th>
-									           <th  >${result.icmPrice}</th>
-									           <th  >${result.icmDate}</th>
-									           <th  >${result.icmCompanyName}</th>
-									           <th  >${result.icmComment}</th>
+									           <td  >${result.prdNo}</td>
+									           <td  >${result.outQty}</td>
+									           <td  >${result.outPrice}</td>
+									           <td  >${result.outDate}</td>
+									           <td  >${result.outCompanyName}</td>
+									           <td  >${result.outComment}</td>
+									          <c:set var= "sum" value="${sum + result.outQty}"/>
+									          <c:set var= "sumPrice" value="${sumPrice + result.outPrice}"/>
 									          </tr>
 										  </c:forEach>  
-									           
+									          <tr >
+									           <td  >합계</td>
+									           <td> <c:out value="${sum}"/> </td>
+									           <td> <c:out value="${sumPrice}"/> </td>
+									           <td  ></td>
+									           <td  ></td>
+									           <td  ></td>
+									          </tr>
 									          
                                     </tbody>
                                 </table>
@@ -151,7 +175,7 @@
             </div>
 		
 	 <div class="w3-row es_center es_padding_30">
-            <button type="button" class="btn btn-primary" >Add</button>
+            <button type="button" class="btn btn-primary" >ORDER</button>
             <button type="button" class="btn btn-secondary" onclick="javascript: self.close();" >Close</button>
 	 </div>
 </div>	
@@ -162,6 +186,10 @@ $(document).ready(function() {
 	   $('#icmTable').DataTable();
 	   $('#outTable').DataTable();
 	});
+	
+	
+	
+	
 </script>
 </body>
 </html>    
