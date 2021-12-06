@@ -175,7 +175,7 @@
             </div>
 		
 	 <div class="w3-row es_center es_padding_30">
-            <button type="button" class="btn btn-primary" >ORDER</button>
+            <button type="button" class="btn btn-primary" onclick="" >ORDER</button>
             <button type="button" class="btn btn-secondary" onclick="javascript: self.close();" >Close</button>
 	 </div>
 </div>	
@@ -186,6 +186,11 @@ $(document).ready(function() {
 	   $('#icmTable').DataTable();
 	   $('#outTable').DataTable();
 	});
+
+function openOrder(){
+	openPopup("/user/order", "openOrder", 1000, 700);
+}
+
 	
 	
 	

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezds.erp.mapper.OrderMapper">
+  		
+    <!-- 발주접수리스트 -->
+    <select id="getProductOrderList" parameterType="OrderVO" resultType="OrderVO">
+        select *  from prd_orders
+        WHERE order_user= #{orderUser} and order_status = "발주접수"
+    </select>
+    
+   
+    <insert id="insertProductOrder" parameterType="OrderVO">
+    INSERT INTO prd_orders
+    			(order_code, order_part_no, order_spec, order_sub_spec , order_price ,  
+    			order_qty , order_total_price ,  order_company ,  order_status , order_date , order_user)
+    VALUES      
+    			( #{orderCode}, #{orderPartNo}, #{orderSpec}, #{orderSubSpec} , #{orderPrice} , 
+    			#{orderQty}, #{orderTotalPrice}, #{orderCompany}, #{orderStatus} , #{orderDate} , #{orderUser}
+    			)
+    </insert> 
+ 	
+ 	<select id="getPurchaseOrder" parameterType="Integer" resultType="OrderVO">
+        select *  from prd_orders
+        WHERE order_id= #{orderId}
+    </select>
+    
+    <update id="statusUpdate" parameterType="OrderVO">
+    UPDATE  prd_orders 
+    	SET 
+ 	    	  order_status = #{orderStatus},
+ 	    	  order_code_num = #{orderCodeNum}
+    	WHERE order_id = #{orderId}
+    </update>
+    
+ 
+
+</mapper>

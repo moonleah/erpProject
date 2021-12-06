@@ -50,6 +50,21 @@
             <div class="sidebar-heading">
                 Inventory
             </div>
+             
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>ORDER Manage</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Order Management:</h6>
+                        <a class="collapse-item" href="/user/order">Order</a>
+                        <a class="collapse-item" href="/user/orderEntry">Order Entry</a>
+                    </div>
+                </div>
+            </li>
             
             <li class="nav-item">
                 <a class="nav-link" href="/user/ivt">
@@ -69,20 +84,7 @@
                     <span>Part release</span></a>
             </li>
             
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>ORDER Manage</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Order Status:</h6>
-                        <a class="collapse-item" href="/user/order">Order</a>
-                        <a class="collapse-item" href="/user/out">Delivery</a>
-                    </div>
-                </div>
-            </li>
+           
             
           <!--    <li class="nav-item">
                 <a class="nav-link" href="/user/getIncomTotalList">

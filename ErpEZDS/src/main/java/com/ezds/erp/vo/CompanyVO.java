@@ -3,16 +3,14 @@ package com.ezds.erp.vo;
 
 public class CompanyVO {
 	
-	@Override
-	public String toString() {
-		return "CompanyVO [companyId=" + companyId + ", companyName=" + companyName + ", companyType=" + companyType
-				+ ", companyTel=" + companyTel + ", companyAddress=" + companyAddress + "]";
-	}
 	private Integer companyId;
 	private String companyName;
 	private Integer companyType;
 	private String companyTel;
 	private String companyAddress;
+	private String companyCeo;
+	private String companyStaff;
+	private String updateDate;
 	
 
 	public Integer getCompanyId() {
@@ -44,6 +42,24 @@ public class CompanyVO {
 	}
 	public void setCompanyAddress(String companyAddress) {
 		this.companyAddress = companyAddress;
+	}
+	public String getCompanyCeo() {
+		return companyCeo;
+	}
+	public void setCompanyCeo(String companyCeo) {
+		this.companyCeo = companyCeo;
+	}
+	public String getCompanyStaff() {
+		return companyStaff;
+	}
+	public void setCompanyStaff(String companyStaff) {
+		this.companyStaff = companyStaff;
+	}
+	public String getUpdateDate() {
+		return updateDate;
+	}
+	public void setUpdateDate(String updateDate) {
+		this.updateDate = updateDate;
 	}
 	
 

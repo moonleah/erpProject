@@ -4,21 +4,13 @@
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>EZDS Admin</title>
  	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/w3.css"> 
    	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/easisoft.css">    
+   	<%@ include file="../include.jsp" %>
 </head>
 
 <body id="page-top">
-<%@ include file="../include.jsp" %>
-
     <!-- Page Wrapper -->
     <div id="wrapper">
 		 <%@ include file="../sidebar.jsp" %>

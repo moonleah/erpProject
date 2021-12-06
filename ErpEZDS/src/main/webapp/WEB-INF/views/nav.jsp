@@ -1,4 +1,5 @@
-      <!-- Topbar -->                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+      <!-- Topbar -->                
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                    <form class="form-inline">
@@ -52,7 +53,7 @@
 
                     </ul>
 
-                </nav>
+        </nav>
                 
 <script>
 function toggleFunc(){

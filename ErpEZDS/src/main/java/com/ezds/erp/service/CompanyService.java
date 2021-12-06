@@ -11,4 +11,5 @@ public interface CompanyService {
 	public void companyUpdate(CompanyVO companyVO) throws Exception;
 	public void companyDelete(CompanyVO companyVO) throws Exception;
 	public CompanyVO getCompanyOne(CompanyVO companyVO) throws Exception;
+	public CompanyVO getCompanyOneName(String orderCompany) throws Exception;
 }

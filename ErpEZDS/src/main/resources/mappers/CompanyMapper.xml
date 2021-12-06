@@ -8,6 +8,12 @@
   	SELECT * FROM prd_company
 	where company_id = #{companyId}
 	</select>
+	  
+	<select id="getCompanyOneName" parameterType="String" resultType="CompanyVO">
+  	SELECT * FROM prd_company
+	where company_name = #{orderCompany}
+	</select>
+	
 	
 	<select id="selectAll" resultType="CompanyVO">
   	SELECT * FROM prd_company order by company_id ASC

@@ -41,5 +41,10 @@ public class CompanyDAO {
 		return mapper.getCompanyOne(companyVO);
 	}
 
+	public CompanyVO getCompanyOneName(String orderCompany) throws Exception {
+		return mapper.getCompanyOneName(orderCompany);
+	}
+
+
 
 }

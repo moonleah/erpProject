@@ -45,6 +45,11 @@ public class CompanyServiceImpl implements CompanyService{
 	public CompanyVO getCompanyOne(CompanyVO companyVO) throws Exception {
 		return companyDao.getCompanyOne(companyVO);
 	}
+
+	@Override
+	public CompanyVO getCompanyOneName(String orderCompany) throws Exception {
+		return companyDao.getCompanyOneName(orderCompany);
+	}
 	
 	
 

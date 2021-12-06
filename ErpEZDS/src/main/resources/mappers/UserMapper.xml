@@ -16,10 +16,10 @@
         where user_email = #{username} 
     </select>
  	
-    <select id="insertUser" parameterType="UserVO">
+    <insert id="insertUser" parameterType="UserVO">
     INSERT INTO prd_user(user_email, user_pw, user_name, user_role)
     VALUES      ( #{userEmail}, #{userPw}, #{userName}, 'ROLE_USER')
-    </select>
+    </insert>
  
  
 
