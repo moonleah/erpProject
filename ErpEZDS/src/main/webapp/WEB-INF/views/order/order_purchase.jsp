@@ -116,11 +116,11 @@
 			           <td  >${status.count}</td>
 			           <td  >${result.orderCode}</td>
 			           <td  >${result.orderSpec}</td>
-			           <c:if test="${result.orderSubSpec ne 'No results'}">
-			           <td  >${result.orderSubSpec}</td>
+			           <c:if test="${fn:contains(result.orderSubSpec, 'No ')}">
+			      	   <td></td>
 			      	   </c:if>
-			      	   <c:if test="${result.orderSubSpec eq 'No results'}">
-			           <td></td>
+			      	   <c:if test="${not fn:contains(result.orderSubSpec, 'No ')}">
+						<td  >${result.orderSubSpec}</td>			           
 			      	   </c:if>
 			           <td  >${result.orderUnit}</td>
 			           <td  >${result.orderPrice}</td>
