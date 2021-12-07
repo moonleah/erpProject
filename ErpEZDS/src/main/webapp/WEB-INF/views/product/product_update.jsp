@@ -133,6 +133,11 @@
  $('#subSpecList').DataTable();
 }); 
  */
+ $(document).keyup(function(e) {
+	    if ( e.keyCode == 27) {
+	        window.close(); 
+	    }
+	})
 
 
 function productUpdate(){

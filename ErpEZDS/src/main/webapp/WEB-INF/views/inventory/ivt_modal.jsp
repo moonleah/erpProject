@@ -192,6 +192,11 @@ function openOrder(p_no, p_spec , p_moq){
 	openPopup("/user/order_popup", "openOrder", 1200, 500 , {orderPartNo : p_no , orderSpec : p_spec , orderQty : p_moq });
 }
 
+$(document).keyup(function(e) {
+    if ( e.keyCode == 27) {
+        window.close(); 
+    }
+})
 	
 	
 	

@@ -54,7 +54,11 @@
 <script>
 //Call the dataTables jQuery plugin
 
-	
+$(document).keyup(function(e) {
+    if ( e.keyCode == 27) {
+        window.close(); 
+    }
+})	
 	
 
 function companyUpdate(){

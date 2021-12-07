@@ -62,6 +62,7 @@
 						</div>
 						<div class="w3-row es_center es_padding_30">
 				            <button type="button" class="btn btn-primary" onclick="productOrder2()" >Order</button>
+				            <button type="button" class="btn btn-secondary" onclick="javascript: self.close();" >Close</button>
 						 </div>
 						 </div>
                      <hr class="sidebar-divider">
@@ -85,11 +86,21 @@ $(document).ready(function () {
     
     var prdNo = $('#specSelect').val();
    	getSubSpecList(prdNo);
+   	
+   	$(document).keyup(function(e) {
+	    if ( e.keyCode == 27) {
+	        window.close(); 
+	    }
+	})
+   	
 
 });
 
 
 function productOrder2(){
+	var insertConfirm = confirm('Are you sure??? ')
+	if(insertConfirm){
+	
 	var param = new Object();
 	param.orderPartNo      	   = $("#partNoSelect").val();
 	param.orderSpec      	   = $("#specSelect option:selected").text();
@@ -116,6 +127,8 @@ function productOrder2(){
 	        }
 	});
 	
+	}
+
 }
 
 
