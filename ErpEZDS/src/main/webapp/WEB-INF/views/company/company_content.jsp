@@ -24,6 +24,8 @@
                                         	<!-- <th><input type="checkbox" onclick="checkAll(this)"></th> -->
 											<th>NO</th>                                        
                                             <th>Company Name</th>
+                                            <th>Company CEO</th>
+                                            <th>Company Staff</th>
                                             <th>Company Type</th>
                                             <th>Company Addr</th>
                                             <th>Company tel</th>
@@ -36,6 +38,8 @@
 									           <!-- <th><input type="checkbox" name=""></th> -->
 									           <td >${status.count}</td>
 									           <td >${result.companyName}</td>
+									           <td >${result.companyCeo}</td>
+									           <td >${result.companyStaff}</td>
 									           <td >${result.companyType}</td>
 									           <td >${result.companyAddress}</td>
 									           <td >${result.companyTel}</td>

@@ -167,9 +167,14 @@
 </div>	
 
 <div class="w3-row es_center es_padding_30">
-            <button type="button" class="btn btn-primary" onclick="printPage()" >print</button>
-            <button type="button" class="btn btn-primary" onclick="download()">PDF download</button>
-            <button type="button" class="btn btn-secondary" onclick="javascript: self.close();" >Close</button>
+             <a href="#" onclick="javascript: printPage()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                        <i class="fas fa-print fa-sm text-white-50"></i> Print
+              </a>
+            
+             <a href="#" onclick="javascript: pdfdownload()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                        <i class="fas fa-download fa-sm text-white-50"></i> PDF
+              </a>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="javascript: self.close();" >CLOSE</button>
 	 </div>
 
 
@@ -193,7 +198,7 @@
 	 return false;
 	}
 
-function download() {
+function pdfdownload() {
 				  //pdf_wrap을 canvas객체로 변환
       html2canvas($('#print')[0]).then(function(canvas) {
 		    var doc = new jsPDF({ 
