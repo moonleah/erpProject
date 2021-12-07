@@ -16,6 +16,8 @@
  @page { size: landscape; }
 
 </style>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
 <body>
 <div  class=" userInfoPop" style="min-height: 100%">
   	     <div class="w3-row es_head es_center ">
@@ -166,7 +168,7 @@
 
 <div class="w3-row es_center es_padding_30">
             <button type="button" class="btn btn-primary" onclick="printPage()" >print</button>
-            <button type="button" class="btn btn-primary" onclick="" >PDF download</button>
+            <button type="button" class="btn btn-primary" onclick="download()">PDF download</button>
             <button type="button" class="btn btn-secondary" onclick="javascript: self.close();" >Close</button>
 	 </div>
 
@@ -177,20 +179,53 @@
 </body>
 
 <script type="text/javascript">
-//<![CDATA[
-function printPage(){
- var initBody;
- window.onbeforeprint = function(){
-  initBody = document.body.innerHTML;
-  document.body.innerHTML =  document.getElementById('print').innerHTML;
+	
+	function printPage(){ // print 
+	 var initBody;
+	 window.onbeforeprint = function(){
+	  initBody = document.body.innerHTML;
+	  document.body.innerHTML =  document.getElementById('print').innerHTML;
+	 };
+	 window.onafterprint = function(){
+	  document.body.innerHTML = initBody;
+	 };
+	 window.print();
+	 return false;
+	}
+
+function download() {
+				  //pdf_wrap을 canvas객체로 변환
+      html2canvas($('#print')[0]).then(function(canvas) {
+		    var doc = new jsPDF({ 
+		    	orientation: "landscape",
+		  		format: "a4"}); //jspdf객체 생성
+		    var imgData = canvas.toDataURL('image/png'); //캔버스를 이미지로 변환
+		    var imgWidth = 297; // 이미지 가로 길이(mm) / A4 기준 210mm
+		    var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+		    var imgHeight = canvas.height * imgWidth / canvas.width;
+		    var margin = 5; // 출력 페이지 여백설정
+		    var position = 0;
+		    doc.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight); //이미지를 기반으로 pdf생성
+		    var now = new Date();
+		    now = getFormatDate(now);
+		    doc.save('order_'+ now +'.pdf'); //pdf저장
+	  });
  };
- window.onafterprint = function(){
-  document.body.innerHTML = initBody;
- };
- window.print();
- return false;
-}
-//]]>
+	
+	
+ /**
+  *  yyyyMMdd 포맷으로 반환
+  */
+ function getFormatDate(date){
+     var year = date.getFullYear();              //yyyy
+     var month = (1 + date.getMonth());          //M
+     month = month >= 10 ? month : '0' + month;  //month 두자리로 저장
+     var day = date.getDate();                   //d
+     day = day >= 10 ? day : '0' + day;          //day 두자리로 저장
+     return  year + '' + month + '' + day;       //'-' 추가하여 yyyy-mm-dd 형태 생성 가능
+ }
+	
+	
 </script>
 
 </html>    

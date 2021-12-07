@@ -102,37 +102,8 @@ $(document).ready(function () {
     $('body').on('click', '#checkAll', function() {
         $('.singlechkbox').prop('checked', this.checked);
     });
-    
-/*   
-$("#orderConfirm").click(function(){ 
-        var rowData = new Array(); 
-        var tdArr = new Array();
-        var checkbox = $("input[name=checkRow]:checked");
-        checkbox.each(function(i) {
-        	  var test = $(this).val();
-            // checkbox.parent() : checkbox의 부모는 <td>이다.
-            // checkbox.parent().parent() : <td>의 부모이므로 <tr>이다.
-           /*  var tr = checkbox.parent().parent().eq(i);
-            var td = tr.children();
-            // 체크된 row의 모든 값을 배열에 담는다.
-            rowData.push(tr.text());
-            // td.eq(0)은 체크박스 이므로  td.eq(1)의 값부터 가져온다.
-            var no = td.eq(1).text()+", "
-            var userid = td.eq(2).text()+", ";
-            var name = td.eq(3).text()+", ";
-            var email = td.eq(4).text()+", ";
-            // 가져온 값을 배열에 담는다.
-            tdArr.push(no);
-            tdArr.push(userid);
-            tdArr.push(name);
-            tdArr.push(email); 
-            console.log(test)
-        });
-    })
-    */
-    
-    
-    
+        
+   
     
 });
 

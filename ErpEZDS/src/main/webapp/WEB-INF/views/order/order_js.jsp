@@ -3,17 +3,20 @@
 <!DOCTYPE html>
 <script>
 function purchaseOrder(){
-	var insertConfirm = confirm('Are you sure??? ')
-	if(insertConfirm){
-	
+	var checkbox = $("input[name=checkRow]:checked");
+	if(checkbox.length == 0 ){
+		alert("발주할 목록을 선택해주세요")
+		return;
+	}
 	var param = new Object(); 
 	var rowData = new Array(); 
     var tdArr = new Array();
     var idArr = new Array();
-	var checkbox = $("input[name=checkRow]:checked");
-	if(checkbox.length == 0 ){
-		alert("발주할 목록을 선택해주세요")
-	}
+
+	var insertConfirm = confirm('Are you sure??? ')
+	if(insertConfirm){
+	
+
 	    checkbox.each(function(i) {
 	    	var no = $(this).attr('value');
 	      	var tr = checkbox.parent().parent().eq(i);
