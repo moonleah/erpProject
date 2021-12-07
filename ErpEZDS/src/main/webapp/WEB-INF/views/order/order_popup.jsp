@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<head>
+    <title>EZDS Admin</title>
+ 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/w3.css"> 
+   	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/easisoft.css">    
+   	<%@ include file="../include.jsp" %>
+</head>
+
+<body>
 <sec:authentication var="principal" property="principal" />
 	 <div id="content">
                 <!-- Begin Page Content -->
@@ -19,13 +27,13 @@
 							<div class="w3-col l1  m12  s12 es_label">PART NO</div> 
 							<div class="w3-col l2  m12  s12">
 								<select id="partNoSelect" name="partNoSelect" class="es_input inputField orderSelect" >
-									<option>-</option>
+									<option value ="${partNo}">${partNo}</option>
 						  		</select>
 						  	</div>
 							<div class="w3-col l1  m12  s12 es_label">SPEC</div> 
 							<div class="w3-col l2  m12  s12">
 								<select id="specSelect" class="es_input inputField orderSelect" >
-								<option>-</option>
+								<option value ="${partNo}">${spec}</option>
 						  		</select>
 							</div>
 							<div class="w3-col l1  m12  s12 es_label">SUB SPEC</div> 
@@ -44,7 +52,7 @@
 						
 						<div  class="w3-row">  
 							<div class="w3-col l1  m12  s12 es_label">최소발주수량</div> 
-							<div class="w3-col l2  m12  s12"><input class="es_input inputField " type="text"  id="prdMoq" value="" readOnly></div>
+							<div class="w3-col l2  m12  s12"><input class="es_input inputField " type="text"  id="prdMoq" value="${moq}" readOnly></div>
 							<div class="w3-col l1  m12  s12 es_label">발주 수량</div> 
 							<div class="w3-col l2  m12  s12"><input class="es_input inputField" type="text"  id="orderQty" value="" ></div>
 							<div class="w3-col l1  m12  s12 es_label">단가</div> 
@@ -53,29 +61,18 @@
 							<div class="w3-col l2  m12  s12"><input class="es_input inputField" type="text"  id="orderDate" value="" ></div>
 						</div>
 						<div class="w3-row es_center es_padding_30">
-				            <button type="button" class="btn btn-primary" onclick="productOrder()" >Order</button>
+				            <button type="button" class="btn btn-primary" onclick="productOrder2()" >Order</button>
 						 </div>
 						 </div>
                      <hr class="sidebar-divider">
                      
-                     <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold ">ORDER LIST</h6>
-                     </div>
-                     <div class="card-body ">
-	                    <div class="table-responsive">  
-	                      	<table class="table table-bordered" id="orderTable" width="100%" cellspacing="0">
-	         			  	</table>   
-	         			  	<div class="w3-row es_right ">
-					            <button type="button" id="orderConfirm" class="btn btn-info" onclick="purchaseOrder()" >발주확정</button>
-							 </div>
-	       			 	</div>
-	       			 </div>	
               </div>
            </div>	
       </div>
    
 				
             </div>
+            </body>
          <%@ include file="order_js.jsp" %>      
 <script>
 $(document).ready(function () {
@@ -84,27 +81,46 @@ $(document).ready(function () {
     $("#orderDate").datepicker( "option", "dateFormat", "yy-mm-dd" );
     var today = new Date();
     $( "#orderDate" ).datepicker( "setDate", today);
-    getProductList();
     getCompanyList();
-    productOrderList();   
     
-    $('#specSelect').change(function () {
-       var prdNo = $('#specSelect').val();
-   	   getSubSpecList(prdNo);
-     });
-    
-    $('#partNoSelect').change(function () { //제품 콤보박스 변경시 spec 콤보박스도 같이 변경 
-    	var select = $("#partNoSelect option:selected").attr('value');
-    	$('#specSelect').val(select).trigger('change');
-		$('#prdMoq').val($("#partNoSelect option:selected").attr('value2'));
-	});
-    
-    $('body').on('click', '#checkAll', function() {
-        $('.singlechkbox').prop('checked', this.checked);
-    });
-        
+    var prdNo = $('#specSelect').val();
+   	getSubSpecList(prdNo);
 
 });
+
+
+function productOrder2(){
+	var param = new Object();
+	param.orderPartNo      	   = $("#partNoSelect").val();
+	param.orderSpec      	   = $("#specSelect option:selected").text();
+	param.orderSubSpec     	   = $("#subSpecSelect option:selected").text();
+	param.orderCompany		   = $("#companySel option:selected").text();	
+	param.orderPrice      	   = $("#orderPrice").val();
+	param.orderQty      	   = $("#orderQty").val();
+	var date = $("#orderDate").datepicker("getDate");
+	param.orderDate      	   = $.datepicker.formatDate("yy-mm-dd", date)
+	param.orderUser      	   = '${principal.username}'
+	
+	$.ajax({
+	        url : "/user/productOrder",
+	        type : 'post',
+	        data : param,
+	        success : function(data){
+	        	 alert("success")
+	        	 opener.opener.window.location.href="/user/order"
+	        	 self.close()
+	        	 opener.close();
+	        },
+	        error : function(){
+	            alert("error");
+	        }
+	});
+	
+}
+
+
+
+
 
 
 </script>

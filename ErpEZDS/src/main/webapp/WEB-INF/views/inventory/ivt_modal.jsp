@@ -175,7 +175,7 @@
             </div>
 		
 	 <div class="w3-row es_center es_padding_30">
-            <button type="button" class="btn btn-primary" onclick="" >ORDER</button>
+            <button type="button" class="btn btn-primary" onclick="openOrder(${prdInfo.prdNo},'${prdInfo.prdSpec}',${prdInfo.prdMoq})" >ORDER</button>
             <button type="button" class="btn btn-secondary" onclick="javascript: self.close();" >Close</button>
 	 </div>
 </div>	
@@ -187,8 +187,9 @@ $(document).ready(function() {
 	   $('#outTable').DataTable();
 	});
 
-function openOrder(){
-	openPopup("/user/order", "openOrder", 1000, 700);
+function openOrder(p_no, p_spec , p_moq){
+	
+	openPopup("/user/order_popup", "openOrder", 1200, 500 , {orderPartNo : p_no , orderSpec : p_spec , orderQty : p_moq });
 }
 
 	

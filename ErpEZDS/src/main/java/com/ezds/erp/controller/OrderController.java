@@ -34,8 +34,20 @@ public class OrderController { //Z5 생산 부품 출고
 	private GenerateCertCharacter random;
 	
 	@RequestMapping("/user/order")
-	public String Save(@ModelAttribute OrderVO orderVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public String order_main(@ModelAttribute OrderVO orderVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return  "/order/order_main";
+	}
+	
+	@RequestMapping("/user/order_popup")
+	public String order_popup(@ModelAttribute OrderVO orderVO,Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		 Integer partNo = orderVO.getOrderPartNo(); 
+		 String spec = orderVO.getOrderSpec();
+		 Integer moq = orderVO.getOrderQty(); 
+		 model.addAttribute("partNo",  partNo);
+		 model.addAttribute("spec",  spec);
+		 model.addAttribute("moq",  moq);
+		 
+		return  "/order/order_popup";
 	}
 	
 	@RequestMapping("/user/purchaseOrder") //구매발주서OPEN

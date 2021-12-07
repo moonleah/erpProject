@@ -12,10 +12,8 @@ function purchaseOrder(){
 	var rowData = new Array(); 
     var tdArr = new Array();
     var idArr = new Array();
-
 	var insertConfirm = confirm('Are you sure??? ')
 	if(insertConfirm){
-	
 
 	    checkbox.each(function(i) {
 	    	var no = $(this).attr('value');
@@ -54,6 +52,7 @@ function purchaseOrder(){
 
 //제품 sub spec 가져오기
 function getSubSpecList(prdNo){
+	$('#subSpecSelect *').remove();
 	if(prdNo != 0 ){
 		 $.ajax({
 		        url : "/user/getSubSpecList",
@@ -61,12 +60,11 @@ function getSubSpecList(prdNo){
 		        data : { subSpecPrdNo : prdNo },
 		        success : function(data){
 		        	if(data.length > 0 ) {
+		        	 $('#subSpecSelect').append('<option value="0">No choice</option>');
 		        	 $.each(data, function (index, value) {
-		        		 $('#subSpecSelect *').remove();
 		        		 $('#subSpecSelect').append('<option value="' + value.subSpecPrdNo + '">'  + value.subSpecName + '</option>');
 		             });
 		        	 }else{
-		        		 $('#subSpecSelect *').remove();
 		        		 $('#subSpecSelect').append('<option value="0">No results</option>');
 		        	 }
 		        },

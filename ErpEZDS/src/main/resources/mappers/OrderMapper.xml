@@ -7,7 +7,7 @@
     <!-- 발주접수리스트 -->
     <select id="getProductOrderList" parameterType="OrderVO" resultType="OrderVO">
         select *  from prd_orders
-        WHERE order_user= #{orderUser} and order_status = "발주접수"
+        WHERE order_user= #{orderUser} and order_status = "발주접수" order by order_id DESC
     </select>
     
    
