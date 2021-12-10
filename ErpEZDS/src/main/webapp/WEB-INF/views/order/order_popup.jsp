@@ -54,9 +54,9 @@
 							<div class="w3-col l1  m12  s12 es_label">최소발주수량</div> 
 							<div class="w3-col l2  m12  s12"><input class="es_input inputField " type="text"  id="prdMoq" value="${moq}" readOnly></div>
 							<div class="w3-col l1  m12  s12 es_label">발주 수량</div> 
-							<div class="w3-col l2  m12  s12"><input class="es_input inputField" type="text"  id="orderQty" value="" ></div>
+							<div class="w3-col l2  m12  s12"><input class="es_input inputField" type="text"  onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" id="orderQty" value="" ></div>
 							<div class="w3-col l1  m12  s12 es_label">단가</div> 
-							<div class="w3-col l2  m12  s12"><input class="es_input inputField" type="text"  id="orderPrice" value="" ></div>
+							<div class="w3-col l2  m12  s12"><input class="es_input inputField" type="text" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" id="orderPrice" value="" ></div>
 							<div class="w3-col l1  m12  s12 es_label">발주 일자</div> 
 							<div class="w3-col l2  m12  s12"><input class="es_input inputField" type="text"  id="orderDate" value="" ></div>
 						</div>

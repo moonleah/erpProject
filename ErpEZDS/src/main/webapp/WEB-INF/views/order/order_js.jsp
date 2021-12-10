@@ -2,6 +2,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <script>
+
+$('#orderQty').blur(function(){
+  var prdMoq  = $('#prdMoq').val();
+  if (this.value != '' && this.value < prdMoq) {
+      alert('최소발주수량 ' +prdMoq+ '보다 작습니다.');
+      $('#orderQty').val('');
+      $('#orderQty').focus();
+      return;
+  }
+});
+
 function purchaseOrder(){
 	var checkbox = $("input[name=checkRow]:checked");
 	if(checkbox.length == 0 ){

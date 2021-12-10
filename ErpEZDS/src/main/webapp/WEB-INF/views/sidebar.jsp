@@ -35,69 +35,65 @@
             <li class="nav-item" >
                 <a class="nav-link" href="/user/company">
                     <i class="far fa-building"></i>
-                    <span>Company</span></a>
+                    <span>거래처</span></a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="/user/productList">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Product Part</span></a>
+                    <span>부품 원자재</span></a>
             </li>
+           
             
             
              <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Heading -->
             <div class="sidebar-heading">
-                Inventory
+                창고
             </div>
              
-             <li class="nav-item">
+            <!--  <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>ORDER Manage</span>
+                    <span>주문관리</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Order Management:</h6>
-                        <a class="collapse-item" href="/user/order">Order</a>
-                        <a class="collapse-item" href="/user/orderEntry">Order Entry</a>
+                        <h6 class="collapse-header">원자재 주문:</h6>
+                        <a class="collapse-item" href="/user/order">주문서작성</a>
+                        <a class="collapse-item" href="/user/orderEntry">주문현황</a>
                     </div>
                 </div>
+            </li> -->
+             <li class="nav-item">
+                <a class="nav-link" href="/user/order">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>주문서 작성</span></a>
             </li>
-            
+             <li class="nav-item">
+                <a class="nav-link" href="/user/orderEntry">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>주문 현황</span></a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="/user/ivt">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Inventory Manage</span></a>
+                    <span>원자재 재고</span></a>
             </li>
             
             <li class="nav-item">
                 <a class="nav-link" href="/user/icm">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Part receipt</span></a>
+                    <span>원자재 입고</span></a>
             </li>
             
             <li class="nav-item">
                 <a class="nav-link" href="/user/out">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Part release</span></a>
+                    <span>원자재 출고</span></a>
             </li>
-            
-           
-            
-          <!--    <li class="nav-item">
-                <a class="nav-link" href="/user/getIncomTotalList">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>product receipt</span></a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/user/getIncomTotalList">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>product release</span></a>
-            </li> -->
-            
+         
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

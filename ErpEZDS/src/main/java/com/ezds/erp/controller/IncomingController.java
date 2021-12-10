@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ezds.erp.service.IncomService;
 import com.ezds.erp.vo.IncomVO;
@@ -28,9 +29,17 @@ public class IncomingController {   //Z5 생산 부품 입고
     	System.out.println(list);
     	model.addAttribute("getIncomList",  list);
     	
-    	return "incoming/incom_main"; // 로그인 폼으로 다시 가도록 함
+    	return "incoming/incom_main"; // 
     }
 	
+    @RequestMapping(value="/user/icmList") //입고수량 합산 List
+    @ResponseBody
+    public List<IncomVO> getIncomList(@ModelAttribute IncomVO IcomVO) throws Exception{
+    	List<IncomVO> list = icmService.getIncomList(IcomVO);
+    	return list;  
+    }
+	
+    
    
 
 }

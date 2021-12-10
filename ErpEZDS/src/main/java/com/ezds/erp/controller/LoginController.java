@@ -32,26 +32,26 @@ public class LoginController {
   
     @RequestMapping(value="/loginForm")
     public String loginForm(HttpSession session, UserVO userVO) throws Exception{
-    System.out.println("로그인 폼 페이지로 ");
+    System.out.println("loginForm");
     	return "login/login"; // 로그인 폼으로 다시 가도록 함
     }
     
     @RequestMapping(value="/registForm")
     public String registForm(HttpSession session, UserVO userVO) throws Exception{
     	
-    System.out.println("회원가입 폼 페이지로 ");
+    System.out.println("registForm");
     	return "login/register"; // 로그인 폼으로 다시 가도록 함
     }
     
     @RequestMapping(value="/forgot-password")
     public String forgotPassword(HttpSession session, UserVO userVO) throws Exception{
-    System.out.println("forgot-password 페이지로 ");
+    System.out.println("forgot-password Form");
     	return "login/forgot-password"; // 로그인 폼으로 다시 가도록 함
     }
     
     
     @GetMapping("/login")
-    public String login() {
+    public String login(UserVO userVO) {
     	return "login/login"; // 로그인 폼으로 다시 가도록 함
     }
     
