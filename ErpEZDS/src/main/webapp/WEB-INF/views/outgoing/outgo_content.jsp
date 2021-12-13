@@ -11,6 +11,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Z5 생산부품 출고 목록</h6>
+                                <%@ include file="../ivt_nav.jsp" %>  
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

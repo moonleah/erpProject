@@ -39,8 +39,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     	
     	
     	http.authorizeRequests()
-               .antMatchers("/user/**").authenticated()
-               .antMatchers("/Manager/**").access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+               .antMatchers("/user/**").authenticated() //공통으로 볼수 있는 부분 
+               .antMatchers("/vendor/**").access("hasRole('ROLE_VENDOR') or hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
+               .antMatchers("/manager/**").access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
                .anyRequest().permitAll()
                .and()

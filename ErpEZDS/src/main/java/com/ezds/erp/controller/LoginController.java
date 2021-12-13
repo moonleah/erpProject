@@ -75,6 +75,12 @@ public class LoginController {
         return "info"; // 로그아웃 후 로그인화면으로 이동
     }
     
+    @Secured("ROLE_VENDOR") //간단하게 롤 추가 
+    @RequestMapping(value="/vendor")
+    public @ResponseBody String vendor (HttpSession session) {
+        return "vendor"; // 로그아웃 후 로그인화면으로 이동
+    }
+    
     @PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN') ") //간단하게 롤 추가 
     @RequestMapping(value="/data")
     public @ResponseBody String data (HttpSession session) {

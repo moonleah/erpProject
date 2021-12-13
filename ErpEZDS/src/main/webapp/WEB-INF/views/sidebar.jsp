@@ -1,5 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+  <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
     
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -42,7 +43,11 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>부품 원자재</span></a>
             </li>
-           
+            <li class="nav-item ">
+                <a class="nav-link" href="/user/order_normal">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>구매 요청</span></a>
+            </li>
             
             
              <!-- Divider -->
@@ -66,6 +71,7 @@
                     </div>
                 </div>
             </li> -->
+           
              <li class="nav-item">
                 <a class="nav-link" href="/user/order">
                     <i class="fas fa-fw fa-table"></i>
@@ -79,10 +85,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="/user/ivt">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>원자재 재고</span></a>
+                    <span>원자재 창고</span></a>
             </li>
-            
-            <li class="nav-item">
+
+        <!--     <li class="nav-item">
                 <a class="nav-link" href="/user/icm">
                     <i class="fas fa-fw fa-table"></i>
                     <span>원자재 입고</span></a>
@@ -92,9 +98,22 @@
                 <a class="nav-link" href="/user/out">
                     <i class="fas fa-fw fa-table"></i>
                     <span>원자재 출고</span></a>
-            </li>
-         
+            </li> -->
+<sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')">   
+          <li class="nav-item">
+           <a class="nav-link" href="#">
+          <span>role_admin/manager</span>
+          </a>
+          </li>   
+</sec:authorize>             <!-- 권한에 따른 메뉴 보여짐 -->
 
+<sec:authorize access="hasAnyRole('ROLE_USER')">
+           <li class="nav-item">
+           <a class="nav-link" href="#">
+          <span>role_user</span>
+          </a>
+          </li>   
+</sec:authorize>             <!-- 권한에 따른 메뉴 보여짐 -->
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
