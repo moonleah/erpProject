@@ -22,6 +22,12 @@
 	            <div class="w3-row es_row">
 	       			<div class="w3-col l12  m12  s12  es_size_16 es_text_lineheight_30 es_padding_10">PRODUCT UPDATE</div>
 	            </div>
+	            
+	            <div class="w3-row">  
+					<div class="w3-col l2  m6  s12 es_label">PRD CATEGORY</div> 
+					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdCategory"  name="prdCategory" value="${product.prdCategory}" ></div>
+					
+				</div>
 	
 				<div class="w3-row">  
 					<div class="w3-col l2  m6  s12 es_label">PART NO</div> 
@@ -159,6 +165,7 @@ function productUpdate(){
 	param.prdTemp 				= $('#prdTemp').val();
 	param.prdQty 				= $('#prdQty').val();
 	param.prdMoq 				= $('#prdMoq').val();
+	param.prdCategory 			= $('#prdCategory').val();
 	param.cateId      	  	= selectOpt;
 	param.subCateId      	= selectOpt2;
 	

@@ -22,11 +22,18 @@
 	            <div class="w3-row es_row">
 	       			<div class="w3-col l12  m12  s12  es_size_16 es_text_lineheight_30 es_padding_10">PRODUCT ADD</div>
 	            </div>
-	
+				
+				<div class="w3-row">  
+					<div class="w3-col l2  m6  s12 es_label">PRD CATEGORY</div> 
+					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdCategory"  name="prdCategory" placeholder="prd Category"></div>
+						<div class="w3-col l2  m6  s12 es_label">MOQ</div> 
+					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdMoq"  name="prdMoq" placeholder="Part Moq"></div>
+				</div>
+				
 				<div class="w3-row">  
 					<div class="w3-col l2  m6  s12 es_label">PART NO</div> 
 					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdNo"  name="prdNo" placeholder="Part No"></div>
-					<div class="w3-col l2  m6  s12 es_label">PART SPEC'</div> 
+					<div class="w3-col l2  m6  s12 es_label">PART SPEC</div> 
 					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdSpec"  name="prdSpec" placeholder="Part SPEC"></div>
 				</div>
 				
@@ -35,7 +42,7 @@
 					<div class="w3-col l4  m3  s3">
 	                      <select class="es_input inputField"   name="prdCateId" id="prdCateId" >
 			                  <c:forEach var="result" items="${categoryList}" varStatus="status">
-			                      <option value="${result.cateId}"  <%-- <c:if test="${customerList.country eq result.countryCd}">selected</c:if>  --%> >${result.cateName}</option>
+			                      <option value="${result.cateId}">${result.cateName}</option>
 				              </c:forEach>
 	             	 	 </select>
 				    </div>
@@ -43,7 +50,7 @@
 					<div class="w3-col l4  m3  s3">
 	                      <select class="es_input inputField"   name="prdSubCateId" id="prdSubCateId" >
 			                  <c:forEach var="result" items="${subCategoryList}" varStatus="status">
-			                      <option value="${result.subCateId}"  <%-- <c:if test="${customerList.country eq result.countryCd}">selected</c:if> --%>  >${result.subCateName}</option>
+			                      <option value="${result.subCateId}">${result.subCateName}</option>
 				              </c:forEach>
 	             	 	 </select>
 				    </div>
@@ -69,11 +76,6 @@
 					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdTol"  name="prdTol" placeholder="Part Tol"></div>
 					<div class="w3-col l2  m6  s12 es_label">QTY</div> 
 					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdQty"  name="prdQty" placeholder="Part Qty"></div>
-				</div>
-					
-				<div class="w3-row">  
-					<div class="w3-col l2  m6  s12 es_label">MOQ</div> 
-					<div class="w3-col l4  m6  s12"><input class="es_input inputField" type="text"  id="prdMoq"  name="prdMoq" placeholder="Part Moq"></div>
 				</div>
 		  </div>
 	 	  
@@ -116,6 +118,7 @@ function productInsert(){
 	param.prdQty 				= $('#prdQty').val();
 	param.prdMoq 				= $('#prdMoq').val();
 	param.prdTol 				= $('#prdTol').val();
+	param.prdCategory 				= $('#prdCategory').val();
 	param.cateId      	  	= selectOpt;
 	param.subCateId      	= selectOpt2;
 	
@@ -126,6 +129,7 @@ function productInsert(){
 		        url : "/user/productInsert",
 		        data : param,
 		        type : 'post',
+		        
 		        success : function(data){
 		        	opener.parent.location.reload();
 		        	window.close();

@@ -3,6 +3,27 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.ezds.erp.mapper.OrderMapper">
+
+	<!-- 발주전체리스트 -->
+    <select id="getOrderAllList" parameterType="OrderVO" resultType="OrderVO">
+        select *  from prd_orders
+       <where>  
+		<if test="searchCode != null and searchCode != '' ">
+		 		and  #{searchCode} 	
+		</if>	
+		<if test="searchCodeNum != null and searchCodeNum != '' ">
+		 		and  #{searchCodeNum} 	
+		</if>	
+	    <if test="searchOrderStatus != null and searchOrderStatus != ''">
+	 		    and #{searchOrderStatus}  
+	 	</if>		 	
+        <if test="orderStartDt != null and orderStartDt != '' and orderEndDt != null and orderEndDt != ''">
+		 		and  (date_format(order_date,'%Y-%m-%d')  between  #{orderStartDt} and  #{orderEndDt} ) 	
+		</if>
+		</where>
+        order by order_id DESC
+    </select>
+
   		
     <!-- 발주접수리스트 -->
     <select id="getProductOrderList" parameterType="OrderVO" resultType="OrderVO">

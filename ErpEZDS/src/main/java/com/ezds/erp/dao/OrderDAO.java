@@ -1,6 +1,5 @@
 package com.ezds.erp.dao;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,19 +7,18 @@ import org.springframework.stereotype.Component;
 
 import com.ezds.erp.mapper.OrderMapper;
 import com.ezds.erp.vo.OrderVO;
-import com.ezds.erp.vo.UserVO;
 
 @Component
 public class OrderDAO {
-	
+
 	@Autowired
 	private OrderMapper mapper;
 
-	public int insertProductOrder(OrderVO orderVO)  throws Exception {
+	public int insertProductOrder(OrderVO orderVO) throws Exception {
 		return mapper.insertProductOrder(orderVO);
 	}
 
-	public List<OrderVO> getProductOrderList(OrderVO orderVO)   throws Exception {
+	public List<OrderVO> getProductOrderList(OrderVO orderVO) throws Exception {
 		return mapper.getProductOrderList(orderVO);
 	}
 
@@ -30,6 +28,10 @@ public class OrderDAO {
 
 	public int statusUpdate(OrderVO orderVO) throws Exception {
 		return mapper.statusUpdate(orderVO);
+	}
+
+	public List<OrderVO> getOrderAllList(OrderVO orderVO) throws Exception {
+		return mapper.getOrderAllList(orderVO);
 	}
 
 }

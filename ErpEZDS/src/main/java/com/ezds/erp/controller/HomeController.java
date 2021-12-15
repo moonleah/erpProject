@@ -13,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ezds.erp.service.UserService;
-import com.ezds.erp.vo.UserVO;
 
 @Controller
 public class HomeController {
@@ -28,9 +27,7 @@ public class HomeController {
 			System.out.println(principal.toString());
 			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 			System.out.println(userDetails);
-			UserVO user = new UserVO();
-			user = (UserVO) userDetails;
-			System.out.println(user);
+
 			return "index"; // 로그인정보가 있을 경우
 		}
 

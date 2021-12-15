@@ -162,11 +162,11 @@
 			
 			
  	</div>
-		
 	 
 </div>	
 
-<div class="w3-row es_center es_padding_30">
+	<div class="w3-row es_center es_padding_30">
+			<p class="es_center es_margin">현재 페이지는 다시 출력되지 않습니다. 발주번호와 발주서를 확인 후 저장 및 프린트하세요</p>
              <a href="#" onclick="javascript: printPage()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                         <i class="fas fa-print fa-sm text-white-50"></i> Print
               </a>

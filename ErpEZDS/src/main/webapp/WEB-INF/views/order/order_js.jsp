@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <script>
 
-$('#orderQty').blur(function(){
+/* $('#orderQty').blur(function(){
   var prdMoq  = $('#prdMoq').val();
   if (this.value != '' && this.value < prdMoq) {
       alert('최소발주수량 ' +prdMoq+ '보다 작습니다.');
@@ -12,7 +12,7 @@ $('#orderQty').blur(function(){
       return;
   }
 });
-
+ */
 function purchaseOrder(){
 	var checkbox = $("input[name=checkRow]:checked");
 	if(checkbox.length == 0 ){
@@ -50,6 +50,7 @@ function purchaseOrder(){
       }
       if(!dupYn)  {
       	  openPopup("/user/purchaseOrder", "productAdd", 1500, 900 ,{ArrId :  JSON.stringify(idArr) , orderCompany : tdArr[0]});
+      	  location.reload();
       }else{
           alert("발주 업체가 다릅니다.다시 선택해주세요.")
         	break;

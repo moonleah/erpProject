@@ -5,26 +5,34 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Z5 생산 부품 목록</h1>
+                    <h1 class="h3 mb-2 text-gray-800">물품 리스트</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Z5 생산 부품 목록
+                            <h6 class="m-0 font-weight-bold text-primary">품 목 Category
 	                             <a href="#" onclick="productAdd()" class="btn btn-success btn-circle btn-sm fa-pull-right">
 	                                        <i class="fas fa-plus "></i>
 	                             </a>
-                             </h6>
+								 <select class="inputField"   name="productCategory" id="productCategory"  onchange = "categoryChange()">
+								 		<option value="0">All</option>
+						                  <c:forEach var="result" items="${productCategory}" varStatus="status">
+						                      <option value="${result.prdCategory}">${result.prdCategory}</option>
+							              </c:forEach>
+			             	 	 </select>
+								
+							</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="prdTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                        	<th>PRD CATE</th>
                                         	<th>PART NO</th>
                                         	<th>SPEC'</th>
-  											<th>CATEGORY</th>
-                                            <th>SUBCATEGORY</th>
+  											<th>PRAT CATE</th>
+                                            <th>PRAT SUBCATE</th>
                                             <th>DESC</th>
                                             <th>TYPE</th>
                                             <th>Temp</th>
@@ -35,31 +43,6 @@
                                             <th>Setting<i class="fas fa-fw fa-cog"></i></th>
                                         </tr>
                                     </thead>
-                                    <tbody id = "tableBody">
-                                          <c:forEach var="result" items="${getProductList}" varStatus="status">
-									         <tr>
-									           <td value="${result.prdNo}" >${result.prdNo}</td>
-									           <td value="${result.prdNo}" >${result.prdSpec}</td>
-									           <td value="${result.cateName}" >${result.cateName}</td>
-									           <td value="${result.subCateName}" >${result.subCateName}</td>
-									           <td value="${result.prdDesc}" >${result.prdDesc}</td>
-									           <td value="${result.prdType}" >${result.prdType}</td>
-									           <td value="${result.prdTemp}" >${result.prdTemp}</td>
-									           <td value="${result.prdMaker}" >${result.prdMaker}</td>
-									           <td value="${result.prdTol}" >${result.prdTol}</td>
-									           <td value="${result.prdQty}" >${result.prdQty}</td>
-									           <td value="${result.prdMoq}" >${result.prdMoq}</td>
-									           <td><!-- data-toggle="modal" data-target="#my-modal" --> 
-										            <a href="#"   onclick="productDelete(${result.prdId})"  class="btn btn-danger btn-circle btn-sm fa-pull-right">
-						                                        <i class="fas fa-trash "></i>
-						                            </a>
-										            <a href="#" onclick="productUpdate(${result.prdId})" class="btn btn-info btn-circle btn-sm fa-pull-right" style = 'margin-right:3px;'>
-	                                        			<i class="fas fa-info-circle  "></i>
-	                             					</a>
-									           </td>
-									          </tr>
-										  </c:forEach>  
-                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -90,6 +73,7 @@ function productDelete(p_id){
 		        data : param,
 		        type : 'post',
 		        success : function(data){
+		        	alert("success")
 		        	location.reload();
 		        },
 		        error : function(){
@@ -97,7 +81,63 @@ function productDelete(p_id){
 		        }
 			 });
 		})
-	
-	
 }
+
+ function categoryChange(){ 
+ var prdCategory = $('#productCategory').val();
+ var d_table = $('#prdTable').DataTable({
+	  dom: 'Blfrtip',
+      buttons: [
+      /* {
+          extend: 'csvHtml5',
+          text: 'Excel',
+          footer: true,
+          className: 'exportBtn'
+      }, */
+      ],
+	    columnDefs: [{
+	    defaultContent: "",
+/* 	    className: 'select-checkbox', */
+	    targets: 0
+	      }],
+	    select: {
+	            style:    'os',
+	            selector: 'td:first-child'
+	        },
+	   "bDestroy": true,
+	   "sAjaxSource": '/user/productList2?prdCategory='+prdCategory+'',
+	    columns: [
+	     { data: 'prdCategory'},
+	     { data: 'prdNo' },
+	     { data: 'prdSpec' },
+	     { data: 'cateName' },
+	     { data: 'subCateName' },
+	     { data: 'prdDesc' },
+	     { data: 'prdType' },
+	     { data: 'prdTemp' },
+	     { data: 'prdMaker' },
+	     { data: 'prdTol' },
+	     { data: 'prdQty' },
+	     { data: 'prdMoq' },
+	     { data: null , "bSortable": false, render:  function (o) { 
+	    	 return  '<a href=# onclick="productUpdate('+ o.prdId +')" >' + '<i class="fas fa-info-circle"  ></i>' + '</a>'
+	    	 + '<a href=# onclick="productDelete('+ o.prdId +')" >' + '<i class="fas fa-trash" style="color:red;"></i>' + '</a>'; 
+	    	 } 
+	     } 
+	       ],
+	});
+
+ }
+ 
+ 
+ 
+ $(document).ready(function() {
+	 categoryChange();
+	 
+	/*  $('#prdTable_filter').prepend('<select id="select"></select>');
+	    $('#prdTable > thead > tr').children().each(function (indexInArray, valueOfElement) { 
+	        $('#select').append('<option>'+valueOfElement.innerHTML+'</option>');
+	    }); */
+	
+ })
 </script>

@@ -10,7 +10,7 @@ import com.ezds.erp.service.OrderService;
 import com.ezds.erp.vo.OrderVO;
 
 @Service
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	OrderDAO orderDao;
@@ -34,7 +34,10 @@ public class OrderServiceImpl implements OrderService{
 	public int statusUpdate(OrderVO orderVO) throws Exception {
 		return orderDao.statusUpdate(orderVO);
 	}
-	
-	
+
+	@Override
+	public List<OrderVO> getOrderAllList(OrderVO orderVO) throws Exception {
+		return orderDao.getOrderAllList(orderVO);
+	}
 
 }

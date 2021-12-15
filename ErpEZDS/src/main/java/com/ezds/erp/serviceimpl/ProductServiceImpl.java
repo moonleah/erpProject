@@ -11,7 +11,7 @@ import com.ezds.erp.vo.ProductVO;
 import com.ezds.erp.vo.SubSpecVO;
 
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 
 	@Autowired
 	ProductDAO productDao;
@@ -19,6 +19,11 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<ProductVO> getProductList() throws Exception {
 		return productDao.getProductList();
+	}
+
+	@Override
+	public List<ProductVO> getProductList(ProductVO productVO) throws Exception {
+		return productDao.getProductList(productVO);
 	}
 
 	@Override
@@ -63,16 +68,17 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public void productSpecInsert(SubSpecVO subSpecVO) throws Exception {
-		  productDao.productSpecInsert(subSpecVO);		
+		productDao.productSpecInsert(subSpecVO);
 	}
 
 	@Override
 	public void productSpecDelete(SubSpecVO subSpecVO) throws Exception {
-		 productDao.productSpecDelete(subSpecVO);		
+		productDao.productSpecDelete(subSpecVO);
 	}
 
-
-
-
+	@Override
+	public List<ProductVO> getPrdCategory() throws Exception {
+		return productDao.getPrdCategory();
+	}
 
 }

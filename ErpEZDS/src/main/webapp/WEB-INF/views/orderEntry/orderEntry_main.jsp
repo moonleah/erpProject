@@ -36,5 +36,4 @@
 	<%@ include file="../modal/logoutModal.jsp"%>
 
 </body>
-
 </html>
