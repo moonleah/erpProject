@@ -123,7 +123,7 @@ input[type="radio"], input[type="checkbox"] {margin:7px 0px 0px}
 .es_searchbar{float:left;width:100%;padding:10px 5px 10px 5px;margin-top:10px;display:flex;flex-direction:row;justify-content:flex-end;align-items:center;border:1px solid #aaa;border-radius:3px;background:#f9f9f9;}
 .es_searchbar .es_search_option_wrap{flex:1;}
 .es_searchbar .es_search_option_wrap .es_search_desc         { padding-left:20px;float:left; color: #46301B;}
-.es_searchbar .es_search_option_wrap .es_search_option       { padding-right:20px;float:right;}
+.es_searchbar .es_search_option_wrap .es_search_option       { padding-right:20px;} /* float:right;} */
 .es_searchbar .es_search_option_wrap .es_search_option > div { display:inline-flex;flex-direction:row;padding:3px 0px;vertical-align:top;}
 .es_searchbar .es_search_option_wrap .es_search_option > div > .es_search_label{vertical-align:top;font-weight:bold;text-align:right;padding-right:5px;padding-top:10px;}
 .es_searchbar .es_search_option_wrap .es_search_option > div > .es_search_content           { padding:3px}
