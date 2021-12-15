@@ -41,13 +41,13 @@
             <li class="nav-item ">
                 <a class="nav-link" href="/user/productList">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>부품 원자재</span></a>
+                    <span>품목</span></a>
             </li>
-            <li class="nav-item ">
+           <!--  <li class="nav-item ">
                 <a class="nav-link" href="/user/order_normal">
                     <i class="fas fa-fw fa-table"></i>
                     <span>구매 요청</span></a>
-            </li>
+            </li> -->
             
             
              <!-- Divider -->
@@ -85,7 +85,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/user/ivt">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>원자재 창고</span></a>
+                    <span>재고</span></a>
             </li>
 
         <!--     <li class="nav-item">
