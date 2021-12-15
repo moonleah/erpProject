@@ -44,14 +44,9 @@
 									           <td >${result.companyAddress}</td>
 									           <td >${result.companyTel}</td>
 									           <td>
-										            <a href="#" onClick = "companyDelete(${result.companyId})" class="btn btn-danger btn-circle btn-sm fa-pull-right">
-						                                        <i class="fas fa-trash "></i>
-						                            </a>
-										            <a href="#" onClick = "companyUpdate(${result.companyId})" class="btn btn-info btn-circle btn-sm fa-pull-right" style = 'margin-right:3px;'>
-	                                        			<i class="fas fa-info-circle  "></i>
-	                             					</a>
+	                             					<a href=# onClick = "companyUpdate(${result.companyId})" ><i class="fas fa-info-circle es_margin"  ></i></a>
+							    	 				<a href=# onClick = "companyDelete(${result.companyId})" ><i class="fas fa-trash" style="color:red;"></i></a>
 									           </td>
-									           
 									         </tr>
 										  </c:forEach>  
 										 
@@ -68,8 +63,6 @@
 <script>
 $(document).ready(function() {
 	   $('#companyTable').DataTable();   
-	   
-	   
 	});
 
 function checkAll(bx) {
